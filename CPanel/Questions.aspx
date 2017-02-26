@@ -63,9 +63,9 @@
             </DeleteParameters>
             <UpdateParameters>
                 <asp:Parameter Name="QS_ID" Type="Int32" />
+                <asp:Parameter Name="QS_Value" Type="String" />
                 <asp:Parameter Name="QS_Grade" Type="Int32" />
                 <asp:Parameter Name="QS_Correct" Type="String" />
-                <asp:Parameter Name="QS_Value" Type="String" />
                 <asp:Parameter Name="QS_Type" Type="String" />
             </UpdateParameters>
         </asp:ObjectDataSource>

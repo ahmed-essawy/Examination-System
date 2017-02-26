@@ -28,12 +28,12 @@ public class QuestionsLayer
         return affected;
     }
 
-    public int UpdateQuestion(int QS_ID, int QS_Grade, string QS_Correct, string QS_Value, string QS_Type)
+    public int UpdateQuestion(int QS_ID, string QS_Value, int QS_Grade, string QS_Type, string QS_Correct)
     {
         string str = "[Update_Question]";
         SqlParameter param1 = new SqlParameter("@QS_ID", QS_ID);
-        SqlParameter param2 = new SqlParameter("@QS_Grade", QS_Grade);
-        SqlParameter param3 = new SqlParameter("@QS_Correct", QS_Correct);
+        SqlParameter param2 = new SqlParameter("@QS_Value", QS_Value);
+        SqlParameter param3 = new SqlParameter("@QS_Grade", QS_Grade);
         int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2, param3 });
         return affected;
     }
