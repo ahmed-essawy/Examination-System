@@ -12,13 +12,19 @@ public class InstructorsLayer
 
     public static DataSet SelectAllInstructors()
     {
-        string str = "select * from instructors ins";
+        string str = "select * from instructors ";
         ds = DAL.RunSelect(str);
         return ds;
     }
     public static DataSet SelectAllDepartments()
     {
         string str = "Select * From Departments";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+    public static DataSet SelectInstructorSalaries()
+    {
+        string str = "Select In_Name,IN_Salary from instructors";
         ds = DAL.RunSelect(str);
         return ds;
     }
