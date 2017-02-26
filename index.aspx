@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
+    <img src="resources\images\back.gif"style="width:100%;height:500px" />
+    <article> Latest News & Events</article>  
+    <div class="row"><div class="4u 12u(mobile)"><section><a class="image featured" style="cursor: pointer;"><img src="images/pic01.jpg" alt=""></a><header><h3>Augue, at quam ut porta?</h3></header><p>Duis eu Aenean Nullam, sed augue, morbi dictum nisi varius Ligula. Elit sit ornare mus congue non purus sapien dui auctor.</p></section></div><div class="4u 12u(mobile)"><section><a class="image featured" style="cursor: pointer;"><img src="images/pic02.jpg" alt=""></a><header><h3>Felis! Arcu at Congue?</h3></header><p>Lectus in non nibh aenean at Ornare ut primis rutrum ut et sit ata ac nisl arcu at erat auctor cep congue at mi tempor magnis cursus vel eget.</p></section></div><div class="4u 12u(mobile)"><section><a class="image featured" style="cursor: pointer;"><img src="images/pic03.jpg" alt=""></a><header><h3>Neque? Aenean augue?</h3></header><p>Cras at ata ligula congue col turpis ornare leo augue. Non ut et massa mi Aenean primis dictum dis nulla ut eget libero.</p></section></div></div> 
 </asp:Content>
