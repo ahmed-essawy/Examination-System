@@ -8,6 +8,8 @@
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
         </asp:GridView>
-    <asp:ObjectDataSource ID="StudentsTable" runat="server" SelectMethod="SelectAllCourses" TypeName="StudentsLayer"></asp:ObjectDataSource>
+        <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="StudentsTable" Height="50px" style="z-index: 1; width: 125px; height: 61px; position: absolute; top: 223px; left: 250px" Width="125px">
+        </asp:DetailsView>
+    <asp:ObjectDataSource ID="StudentsTable" runat="server" SelectMethod="SelectAllStudents" TypeName="StudentsLayer"></asp:ObjectDataSource>
 </form>
 </asp:Content>
