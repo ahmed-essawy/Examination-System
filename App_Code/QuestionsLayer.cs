@@ -19,11 +19,18 @@ public class QuestionsLayer
         return ds;
     }
 
-    public int InsertQuestion(string @CR_Name, string Question)
+    public static DataSet SelectAllCourses()
+    {
+        string str = "SELECT CR_Name FROM Courses";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+
+    public int InsertQuestion(string QS_ID, string QS_Value)
     {
         string str = "[Insert_Question_MCQ]";
-        SqlParameter param1 = new SqlParameter("@CR_Name", CR_Name);
-        SqlParameter param2 = new SqlParameter("@Question", Question);
+        SqlParameter param1 = new SqlParameter("@QS_ID", QS_ID);
+        SqlParameter param2 = new SqlParameter("@QS_Value", QS_Value);
         int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2 });
         return affected;
     }

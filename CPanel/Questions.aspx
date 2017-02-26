@@ -35,38 +35,25 @@
                         <asp:Label ID="Label5" runat="server" Text="<%# Bind('QS_Grade') %>"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Answers">
-                    <ItemTemplate>
-                        <asp:GridView ID=GridView2 runat="server" AutoGenerateColumns="False" DataSourceID="ChoicesTable" ShowHeader="False">
-                            <Columns>
-                                <asp:TemplateField HeaderText="Choices">
-                                    <ItemTemplate>
-                                        <asp:Label ID="Label6" runat="server" Text="<%# Bind('Choice') %>"></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
-                            </Columns>
-                        </asp:GridView>
-                        <asp:ObjectDataSource ID="ChoicesTable" runat="server" SelectMethod="SelectChoices" TypeName="ChoicesLayer">
-                            <SelectParameters>
-                                <asp:ControlParameter ControlID="Label1" DefaultValue="0" Name="QS_ID" PropertyName="Text" Type="Int32" />
-                            </SelectParameters>
-                        </asp:ObjectDataSource>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                <asp:HyperLinkField DataNavigateUrlFields="QS_ID" DataNavigateUrlFormatString="Choices.aspx?id={0}" HeaderText="Choices" Text="Edit" />
                 <asp:CommandField ShowEditButton="True" />
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
-        <asp:ObjectDataSource ID="QuestionsTable" runat="server" DeleteMethod="DeleteQuestion" SelectMethod="SelectAllQuestions" TypeName="QuestionsLayer" UpdateMethod="UpdateQuestion">
+        <asp:ObjectDataSource ID="QuestionsTable" runat="server" DeleteMethod="DeleteQuestion" SelectMethod="SelectAllQuestions" TypeName="QuestionsLayer" UpdateMethod="UpdateQuestion" InsertMethod="InsertQuestion">
             <DeleteParameters>
                 <asp:Parameter Name="QS_ID" Type="Int32" />
             </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="QS_ID" Type="String" />
+                <asp:Parameter Name="QS_Value" Type="String" />
+            </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="QS_ID" Type="Int32" />
                 <asp:Parameter Name="QS_Value" Type="String" />
                 <asp:Parameter Name="QS_Grade" Type="Int32" />
-                <asp:Parameter Name="QS_Correct" Type="String" />
                 <asp:Parameter Name="QS_Type" Type="String" />
+                <asp:Parameter Name="QS_Correct" Type="String" />
             </UpdateParameters>
         </asp:ObjectDataSource>
     </form>
