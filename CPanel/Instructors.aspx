@@ -1,98 +1,98 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/CPanel/CPanel.master" AutoEventWireup="false" CodeFile="Instructors.aspx.vb" Inherits="CPanel_Instructors" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form id="form1" runat="server">
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False">
-        <Columns>
-            <asp:TemplateField HeaderText="In_ID">
-                <EditItemTemplate>
-                    <asp:Label ID="in_id_lbl_edit" runat="server" Text='<%# Bind("In_id") %>'></asp:Label>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="IN_ID_lbl" runat="server" Text='<%# Bind("IN_ID") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_FName">
-                <EditItemTemplate>
-                    <asp:TextBox ID="IN_fname_txtbx" runat="server" Text='<%# Bind("In_fname") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="IN_FNAME_Vld" runat="server" ControlToValidate="IN_fname_txtbx" Display="Dynamic" ErrorMessage="Mudt Enter First Name"></asp:RequiredFieldValidator>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="IN_FName" runat="server" Text='<%# Bind("In_fname") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_LName">
-                <EditItemTemplate>
-                    <asp:TextBox ID="IN_Lname_txtbx" runat="server" Text='<%# Bind("In_lname") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="LName_vld" runat="server" ControlToValidate="IN_Lname_txtbx" Display="Dynamic" ErrorMessage="Lname Must be Entered"></asp:RequiredFieldValidator>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="IN_Lname_lbl" runat="server" Text='<%# Bind("In_Lname") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_BDate">
-                <EditItemTemplate>
-                    <asp:TextBox ID="IN_BDate_txtbx" runat="server" Text='<%# Bind("IN_Bdate") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="Bdate_vld" runat="server" ControlToValidate="IN_BDate_txtbx" Display="Dynamic" ErrorMessage="BirthDate is Required"></asp:RequiredFieldValidator>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="IN_Bdate_lbl" runat="server" Text='<%# Bind("IN_Bdate") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_Phone">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("IN_phone") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("IN_Phone") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_Salary">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("IN_Salary") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("IN_Salary") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_Street">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("IN_Street") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("IN_Street") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_City">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("IN_City") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("IN_City") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="IN_Country">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("IN_Country") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("IN_Country") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField HeaderText="DP_ID">
-                <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="DP_Name" DataValueField="DP_ID" SelectedValue='<%# Bind("DP_ID") %>'>
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SQLProjectConnectionString %>" SelectCommand="SELECT [DP_ID], [DP_Name] FROM [Departments]"></asp:SqlDataSource>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label6" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:CommandField ShowEditButton="True" />
-            <asp:CommandField ShowDeleteButton="True" />
-        </Columns>
-    </asp:GridView>
+            <Columns>
+                <asp:TemplateField HeaderText="In_ID">
+                    <EditItemTemplate>
+                        <asp:Label ID="in_id_lbl_edit" runat="server" Text='<%# Bind("In_id") %>'></asp:Label>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="IN_ID_lbl" runat="server" Text='<%# Bind("IN_ID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_FName">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="IN_fname_txtbx" runat="server" Text='<%# Bind("In_fname") %>'></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="IN_FNAME_Vld" runat="server" ControlToValidate="IN_fname_txtbx" Display="Dynamic" ErrorMessage="Mudt Enter First Name"></asp:RequiredFieldValidator>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="IN_FName" runat="server" Text='<%# Bind("In_fname") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_LName">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="IN_Lname_txtbx" runat="server" Text='<%# Bind("In_lname") %>'></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="LName_vld" runat="server" ControlToValidate="IN_Lname_txtbx" Display="Dynamic" ErrorMessage="Lname Must be Entered"></asp:RequiredFieldValidator>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="IN_Lname_lbl" runat="server" Text='<%# Bind("In_Lname") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_BDate">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="IN_BDate_txtbx" runat="server" Text='<%# Bind("IN_Bdate") %>'></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="Bdate_vld" runat="server" ControlToValidate="IN_BDate_txtbx" Display="Dynamic" ErrorMessage="BirthDate is Required"></asp:RequiredFieldValidator>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="IN_Bdate_lbl" runat="server" Text='<%# Bind("IN_Bdate") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_Phone">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("IN_phone") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("IN_Phone") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_Salary">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("IN_Salary") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("IN_Salary") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_Street">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("IN_Street") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("IN_Street") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_City">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("IN_City") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label4" runat="server" Text='<%# Bind("IN_City") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="IN_Country">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("IN_Country") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" Text='<%# Bind("IN_Country") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="DP_ID">
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="DepartementsTable" DataTextField="DP_Name" DataValueField="DP_ID" SelectedValue='<%# Bind("DP_ID") %>'>
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="DepartementsTable" runat="server" SelectMethod="SelectAllDepartments" TypeName="DepartmentsLayer"></asp:ObjectDataSource>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ShowEditButton="True" />
+                <asp:CommandField ShowDeleteButton="True" />
+            </Columns>
+        </asp:GridView>
         <asp:ObjectDataSource ID="InstructorTable" runat="server" DeleteMethod="DeleteInstructor" InsertMethod="InsertInstructor" SelectMethod="SelectAllInstructors" TypeName="InstructorsLayer" UpdateMethod="UpdateInstructor">
             <DeleteParameters>
                 <asp:Parameter Name="IN_ID" Type="Int32" />
@@ -122,6 +122,5 @@
                 <asp:Parameter Name="DP_ID" Type="Int32" />
             </UpdateParameters>
         </asp:ObjectDataSource>
-</form>
+    </form>
 </asp:Content>
-
