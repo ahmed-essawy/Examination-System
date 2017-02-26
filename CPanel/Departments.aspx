@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form id="form1" runat="server">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="DepartmentObject">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="DepartmentObject" DataKeyNames="DP_ID">
             <Columns>
                 <asp:TemplateField HeaderText="DP_ID">
                     <EditItemTemplate>

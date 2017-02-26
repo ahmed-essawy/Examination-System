@@ -6,7 +6,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td style="width: 202px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Label ID="ins_sal" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#0066CC" style="z-index: 1; position: absolute; top: 113px; left: 465px; width: 352px; right: 160px; height: 48px" Text="Instructor Salaries"></asp:Label>
+                    <asp:Label ID="ins_sal" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#003366" style="z-index: 1; top: 122px; left: 587px; width: 329px; right: 40px; height: 48px; position: absolute" Text="Instructor Salaries"></asp:Label>
                     &nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -17,8 +17,18 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
+                <td style="width: 202px">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td style="width: 202px">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
                 <td style="width: 202px">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" Width="416px">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" style="margin-left: 0px" Width="416px">
                         <Columns>
                             <asp:TemplateField HeaderText="IN_Name">
                                 <ItemTemplate>

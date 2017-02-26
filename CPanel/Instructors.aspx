@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form id="form1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="StudentObject" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False">
         <Columns>
             <asp:TemplateField HeaderText="In_ID">
                 <EditItemTemplate>
@@ -89,39 +89,38 @@
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:CommandField ShowSelectButton="True" />
             <asp:CommandField ShowEditButton="True" />
             <asp:CommandField ShowDeleteButton="True" />
         </Columns>
     </asp:GridView>
-    <asp:ObjectDataSource ID="StudentObject" runat="server" SelectMethod="SelectAllInstructors" TypeName="InstructorsLayer" DeleteMethod="DeleteInstructor" InsertMethod="InsertInstructor" UpdateMethod="UpdateInstructor">
-        <DeleteParameters>
-            <asp:Parameter Name="IN_ID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="IN_ID" Type="Int32" />
-            <asp:Parameter Name="IN_Fname" Type="String" />
-            <asp:Parameter Name="IN_Lname" Type="String" />
-            <asp:Parameter Name="IN_Bdate" Type="String" />
-            <asp:Parameter Name="IN_Phone" Type="String" />
-            <asp:Parameter Name="IN_Salary" Type="Double" />
-            <asp:Parameter Name="IN_Street" Type="String" />
-            <asp:Parameter Name="IN_City" Type="String" />
-            <asp:Parameter Name="IN_Country" Type="String" />
-            <asp:Parameter Name="DP_ID" Type="Int32" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="IN_ID" Type="Int32" />
-            <asp:Parameter Name="IN_Fname" Type="String" />
-            <asp:Parameter Name="IN_Lname" Type="String" />
-            <asp:Parameter Name="IN_Bdate" Type="String" />
-            <asp:Parameter Name="IN_Phone" Type="String" />
-            <asp:Parameter Name="IN_Salary" Type="Double" />
-            <asp:Parameter Name="IN_Street" Type="String" />
-            <asp:Parameter Name="IN_City" Type="String" />
-            <asp:Parameter Name="IN_Country" Type="String" />
-            <asp:Parameter Name="DP_ID" Type="Int32" />
-        </UpdateParameters>
+        <asp:ObjectDataSource ID="InstructorTable" runat="server" DeleteMethod="DeleteInstructor" InsertMethod="InsertInstructor" SelectMethod="SelectAllInstructors" TypeName="InstructorsLayer" UpdateMethod="UpdateInstructor">
+            <DeleteParameters>
+                <asp:Parameter Name="IN_ID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="IN_ID" Type="Int32" />
+                <asp:Parameter Name="IN_Fname" Type="String" />
+                <asp:Parameter Name="IN_Lname" Type="String" />
+                <asp:Parameter Name="IN_Bdate" Type="String" />
+                <asp:Parameter Name="IN_Phone" Type="String" />
+                <asp:Parameter Name="IN_Salary" Type="Double" />
+                <asp:Parameter Name="IN_Street" Type="String" />
+                <asp:Parameter Name="IN_City" Type="String" />
+                <asp:Parameter Name="IN_Country" Type="String" />
+                <asp:Parameter Name="DP_ID" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="IN_ID" Type="Int32" />
+                <asp:Parameter Name="IN_Fname" Type="String" />
+                <asp:Parameter Name="IN_Lname" Type="String" />
+                <asp:Parameter Name="IN_Bdate" Type="String" />
+                <asp:Parameter Name="IN_Phone" Type="String" />
+                <asp:Parameter Name="IN_Salary" Type="Double" />
+                <asp:Parameter Name="IN_Street" Type="String" />
+                <asp:Parameter Name="IN_City" Type="String" />
+                <asp:Parameter Name="IN_Country" Type="String" />
+                <asp:Parameter Name="DP_ID" Type="Int32" />
+            </UpdateParameters>
         </asp:ObjectDataSource>
 </form>
 </asp:Content>

@@ -68,7 +68,7 @@ public class InstructorsLayer
         return row_affected;
     }
 
-    public int UpdateInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
+    public static int UpdateInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
     {
         int row_affected = 0;
         string nonQuery = "Update_instructor";
