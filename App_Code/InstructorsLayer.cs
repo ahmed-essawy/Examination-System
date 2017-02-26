@@ -16,6 +16,12 @@ public class InstructorsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectAllDepartments()
+    {
+        string str = "Select * From Departments";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public int InsertInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
     {
 
@@ -32,11 +38,31 @@ public class InstructorsLayer
          new SqlParameter("@IN_City", IN_City),
          new SqlParameter("@IN_Country", IN_Country),
          new SqlParameter("@DP_ID", DP_ID)};
+        if (IN_Phone == null)
+        {
+            p1[4].Value = DBNull.Value;
+        }
+        if (IN_Salary == 0)
+        {
+            p1[5].Value = DBNull.Value;
+        }
+        if (IN_Street == null)
+        {
+            p1[6].Value = DBNull.Value;
+        }
+        if (IN_City == null)
+        {
+            p1[7].Value = DBNull.Value;
+        }
+        if (IN_Country == null)
+        {
+            p1[8].Value = DBNull.Value;
+        }
         row_affected = DAL.RunDML(nonQuery, p1);
         return row_affected;
     }
 
-    public int UpdateInstructor(int IN_ID ,string IN_Fname , string IN_Lname , string IN_Bdate , string IN_Phone , double IN_Salary , string IN_Street , string IN_City , string IN_Country, int DP_ID)
+    public int UpdateInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
     {
         int row_affected = 0;
         string nonQuery = "Update_instructor";
@@ -51,6 +77,27 @@ public class InstructorsLayer
          new SqlParameter("@IN_City", IN_City),
          new SqlParameter("@IN_Country", IN_Country),
          new SqlParameter("@DP_ID", DP_ID)};
+        if (IN_Phone == null)
+        {
+            p1[4].Value = DBNull.Value;
+        }
+        if (IN_Salary == 0)
+        {
+            p1[5].Value = DBNull.Value;
+        }
+        if (IN_Street == null)
+        {
+            p1[6].Value = DBNull.Value;
+        }
+        if (IN_City == null)
+        {
+            p1[7].Value = DBNull.Value;
+        }
+
+        if (IN_Country == null)
+        {
+            p1[8].Value = DBNull.Value;
+        }
         row_affected = DAL.RunDML(nonQuery, p1);
         return row_affected;
     }
