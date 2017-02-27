@@ -9,7 +9,7 @@ using System.Web;
 /// </summary>
 public class ExamsLayer
 {
-    public int InsertExam(string CR_Name, int MCQ_Num, int TF_Num)
+    public static int InsertExam(string CR_Name, int MCQ_Num, int TF_Num)
     {
         int row_affected;
         string nonQuery = "[Insert_Exam]";
