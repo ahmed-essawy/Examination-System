@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/CPanel.master" AutoEventWireup="true" CodeFile="Courses.aspx.cs" Inherits="CPanel_Courses" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Courses.aspx.cs" Inherits="CPanel_Courses" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Courses
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form runat="server">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CoursesTable" BorderWidth="2px" Caption="Courses" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Both" DataKeyNames=CR_ID>
             <Columns>

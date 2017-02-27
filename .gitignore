@@ -251,4 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 /Template 3
-/Template 3
+*.vs/*

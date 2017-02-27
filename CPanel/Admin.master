@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/ControlPanel.master" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="CPanel_Admin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Admin |
+    <asp:ContentPlaceHolder ID="Title" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Sidebar" runat="Server">
+    <div class="menu_section">
+        <h3>Administrator</h3>
+        <ul class="nav side-menu">
+            <li><a><i class="fa fa-building">&nbsp;</i>Departments<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="DisplayAllDepartments.aspx">Display all</a></li>
+                    <li><a href="Insert_Department.aspx">New Department</a></li>
+                    <li><a href="Departments.aspx">Update Department</a></li>
+                    <li><a href="Departments.aspx">Delete Department</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-male">&nbsp;</i>Instructors<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="DisplayAllInstructors.aspx">Display all</a></li>
+                    <li><a href="Insert_Instructor.aspx">New Instructor</a></li>
+                    <li><a href="Instructors.aspx">Update Instructor</a></li>
+                    <li><a href="Instructors.aspx">Delete Instructor</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-users">&nbsp;</i>Students<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="DisplayAllStudents.aspx">Display all</a></li>
+                    <li><a href="Insert_Student.aspx">New Student</a></li>
+                    <li><a href="Students.aspx">Update Student</a></li>
+                    <li><a href="Students.aspx">Delete Student</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-question">&nbsp;</i>Questions<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="DisplayAllQuestions.aspx">Display all</a></li>
+                    <li><a href="Insert_Question.aspx">New Question</a></li>
+                    <li><a href="Questions.aspx">Update Question</a></li>
+                    <li><a href="Questions.aspx">Delete Question</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Counters" runat="Server">
+    <style>
+        .col-md-2 {
+            width: 14.2% !important;
+        }
+    </style>
+    <div class="row tile_count">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-building">&nbsp;</i>Total Departments</span>
+            <div class="count"><%= Counters.Departments() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-male">&nbsp;</i>Total Instructors</span>
+            <div class="count"><%= Counters.Instructors() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-users">&nbsp;</i>Total Students</span>
+            <div class="count"><%= Counters.Students() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-book">&nbsp;</i>Total Courses</span>
+            <div class="count green"><%= Counters.Courses() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-bookmark">&nbsp;</i>Total Topics</span>
+            <div class="count"><%= Counters.Topics() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-file-text">&nbsp;</i>Total Exams</span>
+            <div class="count"><%= Counters.Exams() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-question">&nbsp;</i>Total Questions</span>
+            <div class="count"><%= Counters.Questions() %></div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="Server">
+    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

@@ -36,4 +36,16 @@ public class DAL
         con.Close();
         return affected;
     }
+
+    public static int Count(string Table)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Essawy"].ToString());
+        SqlCommand com = new SqlCommand();
+        com.CommandText = "SELECT COUNT(*) FROM " + Table;
+        com.Connection = con;
+        con.Open();
+        int affected = int.Parse(com.ExecuteScalar().ToString());
+        con.Close();
+        return affected;
+    }
 }

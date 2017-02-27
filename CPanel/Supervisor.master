@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/ControlPanel.master" AutoEventWireup="true" CodeFile="Supervisor.master.cs" Inherits="CPanel_Admin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Counters" runat="Server">
+    <div class="row tile_count">
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-users">&nbsp;</i>Total Students</span>
+            <div class="count"><%= Counters.Students() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-book">&nbsp;</i>Total Courses</span>
+            <div class="count green"><%= Counters.Courses() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-bookmark">&nbsp;</i>Total Topics</span>
+            <div class="count"><%= Counters.Topics() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-file-text">&nbsp;</i>Total Exams</span>
+            <div class="count"><%= Counters.Exams() %></div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-question">&nbsp;</i>Total Questions</span>
+            <div class="count"><%= Counters.Questions() %></div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

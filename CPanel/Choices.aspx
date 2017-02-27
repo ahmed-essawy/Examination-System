@@ -1,6 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/CPanel.master" AutoEventWireup="true" CodeFile="Choices.aspx.cs" Inherits="CPanel_Choices" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Choices.aspx.cs" Inherits="CPanel_Choices" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Choices
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">
         <asp:Label ID=Label1 runat="server" Text="" Style="height: 50px; width: 50%; background-color: #2A3F54; display: inline-block; padding: 15px;"></asp:Label>
         <table style="width: 50%;">

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class CPanel_index : System.Web.UI.Page
+public partial class CPanel_ControlPanel : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
