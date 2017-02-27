@@ -12,32 +12,34 @@ public class InstructorsLayer
 
     public static DataSet SelectAllInstructors()
     {
-        string str = "select * from instructors ";
+        string str = "select * from instructors";
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public static DataSet SelectInstructors_DepName()
     {
         string str = "select ins.*,D.DP_Name from Instructors ins,Departments d where ins.DP_ID=d.DP_ID";
         ds = DAL.RunSelect(str);
         return ds;
-
     }
+
     public static DataSet SelectAllDepartments()
     {
         string str = "Select * From Departments";
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public static DataSet SelectInstructorSalaries()
     {
         string str = "Select In_Name,IN_Salary from instructors";
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public int InsertInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
     {
-
         int row_affected;
         string nonQuery = "Insert_Instructor";
         SqlParameter[] p1 = new SqlParameter[] {
@@ -114,6 +116,7 @@ public class InstructorsLayer
         row_affected = DAL.RunDML(nonQuery, p1);
         return row_affected;
     }
+
     public int DeleteInstructor(int IN_ID)
     {
         int row_affected;
