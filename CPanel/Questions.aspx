@@ -2,11 +2,16 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form runat="server">
-        <asp:GridView ID=GridView1 runat="server" AutoGenerateColumns="False" DataSourceID="QuestionsTable" BorderWidth="2px" Caption="Questions" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Horizontal" HorizontalAlign="Center">
+        <asp:GridView ID=GridView1 runat="server" AutoGenerateColumns="False" DataSourceID="QuestionsTable" BorderWidth="2px" Caption="Questions" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Horizontal" HorizontalAlign="Center" DataKeyNames=QS_ID>
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text="<%# Bind('QS_ID') %>"></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Course">
+                    <ItemTemplate>
+                        <asp:Label ID="Label6" runat="server" Text="<%# Bind('CR_Name') %>"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Question">
@@ -40,20 +45,17 @@
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
-        <asp:ObjectDataSource ID="QuestionsTable" runat="server" DeleteMethod="DeleteQuestion" SelectMethod="SelectAllQuestions" TypeName="QuestionsLayer" UpdateMethod="UpdateQuestion" InsertMethod="InsertQuestion">
+        <asp:ObjectDataSource ID="QuestionsTable" runat="server" DeleteMethod="DeleteQuestion" SelectMethod="SelectAllQuestions" TypeName="QuestionsLayer" UpdateMethod="UpdateQuestion">
             <DeleteParameters>
                 <asp:Parameter Name="QS_ID" Type="Int32" />
             </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="QS_ID" Type="String" />
-                <asp:Parameter Name="QS_Value" Type="String" />
-            </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="QS_ID" Type="Int32" />
                 <asp:Parameter Name="QS_Value" Type="String" />
                 <asp:Parameter Name="QS_Grade" Type="Int32" />
                 <asp:Parameter Name="QS_Type" Type="String" />
                 <asp:Parameter Name="QS_Correct" Type="String" />
+                <asp:Parameter Name="CR_Name" Type="String" />
             </UpdateParameters>
         </asp:ObjectDataSource>
     </form>

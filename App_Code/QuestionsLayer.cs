@@ -14,28 +14,36 @@ public class QuestionsLayer
 
     public static DataSet SelectAllQuestions()
     {
-        string str = "SELECT [QS_ID], [QS_Value], [QS_Type], [QS_Correct], [QS_Grade] FROM Questions";
+        string str = "SELECT [QS_ID], [CR_Name], [QS_Value], [QS_Type], [QS_Correct], [QS_Grade] FROM [dbo].[Questions], [dbo].[Courses] WHERE [dbo].[Questions].CR_ID = [dbo].[Courses].[CR_ID]";
         ds = DAL.RunSelect(str);
         return ds;
     }
 
-    public static DataSet SelectAllCourses()
-    {
-        string str = "SELECT CR_Name FROM Courses";
-        ds = DAL.RunSelect(str);
-        return ds;
-    }
-
-    public int InsertQuestion(string QS_ID, string QS_Value)
+    public static int InsertQuestionMCQ(string CR_Name, string Question, string Choice1, string Choice2, string Choice3, string Choice4, string Correct_Answer)
     {
         string str = "[Insert_Question_MCQ]";
-        SqlParameter param1 = new SqlParameter("@QS_ID", QS_ID);
-        SqlParameter param2 = new SqlParameter("@QS_Value", QS_Value);
-        int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2 });
+        SqlParameter param1 = new SqlParameter("@CR_Name", CR_Name);
+        SqlParameter param2 = new SqlParameter("@Question", Question);
+        SqlParameter param3 = new SqlParameter("@Choice1", Choice1);
+        SqlParameter param4 = new SqlParameter("@Choice2", Choice2);
+        SqlParameter param5 = new SqlParameter("@Choice3", Choice3);
+        SqlParameter param6 = new SqlParameter("@Choice4", Choice4);
+        SqlParameter param7 = new SqlParameter("@Correct_Answer", Correct_Answer);
+        int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2, param3, param4, param5, param6, param7 });
         return affected;
     }
 
-    public int UpdateQuestion(int QS_ID, string QS_Value, int QS_Grade, string QS_Type, string QS_Correct)
+    public static int InsertQuestionTF(string CR_Name, string Question, string Correct_Answer)
+    {
+        string str = "[Insert_Question_TF]";
+        SqlParameter param1 = new SqlParameter("@CR_Name", CR_Name);
+        SqlParameter param2 = new SqlParameter("@Question", Question);
+        SqlParameter param3 = new SqlParameter("@Correct_Answer", Correct_Answer);
+        int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2, param3 });
+        return affected;
+    }
+
+    public static int UpdateQuestion(int QS_ID, string QS_Value, int QS_Grade, string QS_Type, string QS_Correct, string CR_Name)
     {
         string str = "[Update_Question]";
         SqlParameter param1 = new SqlParameter("@QS_ID", QS_ID);
@@ -45,7 +53,7 @@ public class QuestionsLayer
         return affected;
     }
 
-    public int DeleteQuestion(int QS_ID)
+    public static int DeleteQuestion(int QS_ID)
     {
         string str = "Delete_Question";
         SqlParameter param1 = new SqlParameter("@QS_ID", QS_ID);
