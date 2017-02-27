@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form id="form1" runat="server">
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False" DataKeyNames="IN_ID">
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <EditItemTemplate>

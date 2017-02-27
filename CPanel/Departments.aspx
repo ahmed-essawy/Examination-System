@@ -32,7 +32,6 @@
                         <asp:Label ID="Dp_Manager_lbl" runat="server" Text='<%# Bind("DP_Manager") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:CommandField ShowEditButton="True" />
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
