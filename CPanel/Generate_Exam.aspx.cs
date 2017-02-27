@@ -9,6 +9,18 @@ public partial class CPanel_Generate_Exam : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+    }
 
+    protected void Generate_Click(object sender, EventArgs e)
+    {
+        ExamsLayer Exams = new ExamsLayer();
+        string CR_Name = CR_ID.Text;
+        int MCQ_Number = int.Parse(MCQ_Num.SelectedValue);
+        int TF_Number = 10 - MCQ_Number;
+        int affected = Exams.InsertExam(CR_Name, MCQ_Number, TF_Number);
+        if (affected > 0)
+            Affected_Rows.Text = "Exam generated";
+        else
+            Affected_Rows.Text = "Failed to generate exam";
     }
 }
