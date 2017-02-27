@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Choices.aspx.cs" Inherits="CPanel_Choices" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Update.aspx.cs" Inherits="CPanel_Choices" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
     Choices

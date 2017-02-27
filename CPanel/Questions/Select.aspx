@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Update_Delete.aspx.cs" Inherits="CPanel_Questions" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_Questions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
     Questions
@@ -43,9 +43,7 @@
                         <asp:Label ID="Label5" runat="server" Text="<%# Bind('QS_Grade') %>"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:HyperLinkField DataNavigateUrlFields="QS_ID" DataNavigateUrlFormatString="Choices/Update.aspx?id={0}" HeaderText="Choices" Text="Edit" />
-                <asp:CommandField ShowEditButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:HyperLinkField DataNavigateUrlFields="QS_ID" DataNavigateUrlFormatString="Choices/Select.aspx?id={0}" HeaderText="Choices" Text="View" />
             </Columns>
         </asp:GridView>
         <asp:ObjectDataSource ID="QuestionsTable" runat="server" DeleteMethod="DeleteQuestion" SelectMethod="SelectAllQuestions" TypeName="QuestionsLayer" UpdateMethod="UpdateQuestion">
