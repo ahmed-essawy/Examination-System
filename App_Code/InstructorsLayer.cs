@@ -16,6 +16,13 @@ public class InstructorsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectInstructors_DepName()
+    {
+        string str = "select ins.*,D.DP_Name from Instructors ins,Departments d where ins.DP_ID=d.DP_ID";
+        ds = DAL.RunSelect(str);
+        return ds;
+
+    }
     public static DataSet SelectAllDepartments()
     {
         string str = "Select * From Departments";
