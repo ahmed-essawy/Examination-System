@@ -252,3 +252,5 @@ paket-files/
 *.sln.iml
 /Template 3
 *.vs/*
+*.exclude
+/CPanel/gentelella-master.zip.exclude
