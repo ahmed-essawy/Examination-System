@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form id="form1" runat="server">
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False">
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" DataSourceID="InstructorTable" AutoGenerateColumns="False" BorderWidth="2px" Caption="Instructors" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Both" DataKeyNames=IN_ID>
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <EditItemTemplate>
@@ -27,7 +27,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Birthdate">
                     <EditItemTemplate>
-                        <asp:TextBox ID="IN_BDate_txtbx" runat="server" Text='<%# Bind("IN_Bdate") %>'></asp:TextBox>
+                        <asp:TextBox ID="IN_BDate_txtbx" runat="server" Text='<%# Bind("IN_Bdate") %>' type="date"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="Bdate_vld" runat="server" ControlToValidate="IN_BDate_txtbx" Display="Dynamic" ErrorMessage="BirthDate is Required"></asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>

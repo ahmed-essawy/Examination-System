@@ -26,6 +26,11 @@ public partial class CPanel_Insert_Question : System.Web.UI.Page
             Label5.Visible = true;
             Label1.Text = "Answer 1";
             QS_Answer.Visible = false;
+            RequiredQS_Answer1.Enabled = true;
+            RequiredQS_Answer2.Enabled = true;
+            RequiredQS_Answer3.Enabled = true;
+            RequiredQS_Answer4.Enabled = true;
+            RequiredQS_Correct.Enabled = true;
         }
         else
         {
@@ -40,6 +45,11 @@ public partial class CPanel_Insert_Question : System.Web.UI.Page
             Label5.Visible = false;
             Label1.Text = "Answer";
             QS_Answer.Visible = true;
+            RequiredQS_Answer1.Enabled = false;
+            RequiredQS_Answer2.Enabled = false;
+            RequiredQS_Answer3.Enabled = false;
+            RequiredQS_Answer4.Enabled = false;
+            RequiredQS_Correct.Enabled = false;
         }
     }
 

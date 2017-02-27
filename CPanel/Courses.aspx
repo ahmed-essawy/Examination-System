@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form runat="server">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" Width="494px">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="CoursesTable" BorderWidth="2px" Caption="Courses" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Both" DataKeyNames=CR_ID>
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
@@ -29,7 +29,7 @@
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
         </asp:GridView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="DeleteCourse" InsertMethod="InsertCourse" SelectMethod="SelectCourses" TypeName="CoursesLayer" UpdateMethod="UpdateCourse">
+        <asp:ObjectDataSource ID="CoursesTable" runat="server" DeleteMethod="DeleteCourse" InsertMethod="InsertCourse" SelectMethod="SelectCourses" TypeName="CoursesLayer" UpdateMethod="UpdateCourse">
             <DeleteParameters>
                 <asp:Parameter Name="CR_ID" Type="Int32" />
             </DeleteParameters>
@@ -45,4 +45,3 @@
         </asp:ObjectDataSource>
     </form>
 </asp:Content>
-

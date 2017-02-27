@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form runat="server">
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="TopicsTable" AutoGenerateColumns="False" Width="441px" DataKeyNames="TP_ID,CR_ID">
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="TopicsTable" AutoGenerateColumns="False" BorderWidth="2px" Caption="Topics" CaptionAlign="Top" CellPadding="10" CellSpacing="10" GridLines="Both" DataKeyNames="TP_ID,CR_ID">
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
