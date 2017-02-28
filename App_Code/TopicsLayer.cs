@@ -44,4 +44,10 @@ public class TopicsLayer
         int affected = DAL.RunDML(str, new SqlParameter[] { param1,param2 });
         return affected;
     }
+    public static DataSet SelectTopics_Course(int CR_ID)
+    {
+        string str = "select distinct(TP_Name), CR_Name from Topics t, Courses c where t.CR_ID=c.CR_ID and c.CR_ID="+CR_ID;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
 }
