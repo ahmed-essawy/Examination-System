@@ -16,13 +16,20 @@ public class InstructorsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
-
+    
     public static DataSet SelectInstructors_DepName()
     {
         string str = "select ins.*,D.DP_Name from Instructors ins,Departments d where ins.DP_ID=d.DP_ID";
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectInstructor_Courses(int cr_id)
+    {
+        string str = "select distinct(ins.IN_ID), ins.IN_Name from Instructors ins, IN_ST_CR isc where isc.IN_ID = ins.IN_ID and isc.CR_ID = "+cr_id;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+   
 
     public static DataSet SelectAllDepartments()
     {
