@@ -13,7 +13,7 @@ public class DAL
 {
     public static DataSet RunSelect(string SelectQuery)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["wafaa"].ToString());
         SqlCommand com = new SqlCommand();
         DataSet ds = new DataSet();
         com.CommandText = SelectQuery;
@@ -22,25 +22,11 @@ public class DAL
         adapter.Fill(ds);
         return ds;
     }
-    public static DataSet RunSelect(string SelectQuery, SqlParameter[] para)
-    {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
-        SqlCommand com = new SqlCommand();
-        DataSet ds = new DataSet();
-        com.CommandType = CommandType.StoredProcedure;
-        com.CommandText = SelectQuery;
-        com.Parameters.AddRange(para);
-        com.Connection = con;
-        SqlDataAdapter adapter = new SqlDataAdapter(com);
-        adapter.Fill(ds);
-        return ds;
-    }
-
 
 
     public static int RunDML(string DMLQuery, SqlParameter[] param)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["wafaa"].ToString());
         SqlCommand com = new SqlCommand();
         com.CommandType = CommandType.StoredProcedure;
         com.CommandText = DMLQuery;
@@ -54,7 +40,7 @@ public class DAL
 
     public static int Count(string Table)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["wafaa"].ToString());
         SqlCommand com = new SqlCommand();
         com.CommandText = "SELECT COUNT(*) FROM " + Table;
         com.Connection = con;
