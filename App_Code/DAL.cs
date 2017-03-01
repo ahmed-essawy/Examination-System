@@ -13,7 +13,7 @@ public class DAL
 {
     public static DataSet RunSelect(string SelectQuery)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Linah"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
         SqlCommand com = new SqlCommand();
         DataSet ds = new DataSet();
         com.CommandText = SelectQuery;
@@ -54,7 +54,7 @@ public class DAL
 
     public static int Count(string Table)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Linah"].ToString());
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Heba"].ToString());
         SqlCommand com = new SqlCommand();
         com.CommandText = "SELECT COUNT(*) FROM " + Table;
         com.Connection = con;
