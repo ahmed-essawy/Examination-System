@@ -107,6 +107,13 @@ public class StudentsLayer
         return ds;
     }
 
+    public static DataSet DisplayStudentAnswers(int ST_ID)
+    {
+        string str = "select a.Answer,b.ST_ID,b.ST_Name,a.QS_ID from ST_EX_Answers a,Students b  where  a.ST_ID=b.ST_ID and b.ST_ID=" + ST_ID;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+
 
     public static int InsertStudent(int ST_ID, string ST_Fname, string ST_Lname,string ST_Bdate,string ST_Phone,decimal ST_Salary,string ST_Street,string ST_City,string ST_Country,int DP_ID)
     {

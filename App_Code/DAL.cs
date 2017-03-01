@@ -35,9 +35,6 @@ public class DAL
         adapter.Fill(ds);
         return ds;
     }
-
-
-
     public static int RunDML(string DMLQuery, SqlParameter[] param)
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Linah"].ToString());
