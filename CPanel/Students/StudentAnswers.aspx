@@ -48,13 +48,6 @@
                     </asp:ObjectDataSource>
                 </td>
             </tr>
-            <tr>
-                <td style="width: 71px">&nbsp;</td>
-                <td class="modal-sm" style="width: 237px">
-                    <asp:Button ID="Button1" runat="server" Text="Display" Width="241px" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
         </table>
     </form>
 </asp:Content>
