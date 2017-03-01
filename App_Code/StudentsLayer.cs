@@ -14,7 +14,7 @@ public class StudentsLayer
 
     public static DataSet SelectAllStudents()  
     {
-        string str = "SELECT a.ST_ID,a.ST_Fname,a.ST_Lname,a.ST_Name,a.ST_Age,a.ST_Phone,a.ST_Salary,a.ST_Street,a.ST_City,a.ST_Country,a.ST_JoinDate,b.DP_Name FROM Students a,Departments b where a.DP_ID=b.DP_ID";
+        string str = "SELECT a.ST_ID,a.ST_Fname,a.ST_Lname,a.ST_Name,a.ST_Age,a.ST_Bdate,a.ST_Phone,a.ST_Salary,a.ST_Street,a.ST_City,a.ST_Country,a.ST_JoinDate,a.DP_ID,b.DP_Name FROM Students a,Departments b where a.DP_ID=b.DP_ID";
         ds = DAL.RunSelect(str);
         return ds;
     }
@@ -29,7 +29,7 @@ public class StudentsLayer
 
     public static DataSet SelectDP()
     {
-        string str = "select DP_Name,DP_ID from Departments ";
+        string str = "select DP_ID,DP_Name from Departments";
         ds = DAL.RunSelect(str);
         return ds;
 
@@ -75,7 +75,7 @@ public class StudentsLayer
     }
     public static DataSet DisplayExamByDate(string Date)
     {
-        string str = "select a.ST_Name,convert(varchar(10),b.[Date]) [Date],b.ST_ID   from Students a,ST_EX_Answers b where a.ST_ID=b.ST_ID and b.[Date]='" + Date+"'";
+        string str = "select a.ST_Name,convert(varchar(10),b.[Date]) [Date],b.ST_ID   from Students a,ST_EX_Answers b where a.ST_ID=b.ST_ID and b.[Date]='" +Date+"'";
         ds = DAL.RunSelect(str);
         return ds;
 
@@ -149,13 +149,13 @@ public class StudentsLayer
         SqlParameter par3 = new SqlParameter("@ST_Lname", ST_Lname);
         SqlParameter par4 = new SqlParameter("@ST_Bdate", ST_Bdate);
         SqlParameter par5 = new SqlParameter("@ST_Phone", ST_Phone);
-        SqlParameter par6 = new SqlParameter("@ ST_Salary", ST_Salary);
+        SqlParameter par6 = new SqlParameter("@ST_Salary", ST_Salary);
         SqlParameter par7 = new SqlParameter("@ST_Street", ST_Street);
         SqlParameter par8 = new SqlParameter("@ST_City", ST_City);
         SqlParameter par9 = new SqlParameter("@ST_Country", ST_Country);
         SqlParameter par10 = new SqlParameter("@DP_ID", DP_ID);
 
-        int affected = DAL.RunDML("Insert_Student", new[] { par1, par2, par3, par4, par5, par6, par7, par8, par9, par10 });
+        int affected = DAL.RunDML("Update_Student", new[] { par1, par2, par3, par4, par5, par6, par7, par8, par9, par10 });
         return affected;
     }
 

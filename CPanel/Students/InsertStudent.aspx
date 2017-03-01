@@ -14,7 +14,9 @@
                         <td style="width: 139px">
                             <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="New Student Info"></asp:Label>
                         </td>
-                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label>
+                        </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>

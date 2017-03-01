@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form id="form1" runat="server">
 
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="Student" Width="517px" AllowPaging="True" AllowSorting="True" Style="margin-right: 70px" Height="330px">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="Student" Width="517px" AllowPaging="True" AllowSorting="True" Style="margin-right: 70px" Height="330px" DataKeyNames="ST_ID">
             <Columns>
                 <asp:TemplateField HeaderText="ID">
                     <EditItemTemplate>
@@ -33,7 +33,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Age">
                     <EditItemTemplate>
-                        <asp:TextBox ID="ST_Age_edit" runat="server" Text='<%# Bind("ST_Age") %>'></asp:TextBox>
+                        <asp:TextBox ID="ST_Age_edit" runat="server" Type="date" Text='<%# Bind("ST_Bdate") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
                         <asp:TextBox ID="ST_Bdate_insert" PlaceHolder="Enter Student Birth Date" runat="server"></asp:TextBox>
@@ -99,7 +99,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="JoinDate">
                     <EditItemTemplate>
-                        <asp:TextBox ID="ST_JoinDate_edit" runat="server" Text='<%# Bind("ST_JoinDate") %>'></asp:TextBox>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="ST_JoinDate_des" runat="server" Text='<%# Bind("ST_JoinDate") %>'></asp:Label>
@@ -107,7 +107,9 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="DP_Name">
                     <EditItemTemplate>
-                        <asp:TextBox ID="ST_DP_Name_edit" runat="server" Text='<%# Bind("DP_Name") %>'></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="Dep" DataTextField="DP_Name" DataValueField="DP_ID" SelectedValue="<%# Bind('DP_ID') %>">
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="Dep" runat="server" SelectMethod="SelectDP" TypeName="StudentsLayer"></asp:ObjectDataSource>
                     </EditItemTemplate>
                     <FooterTemplate>
                         <asp:DropDownList ID="DP_Name_drop" runat="server">
@@ -119,7 +121,6 @@
                 </asp:TemplateField>
                 <asp:CommandField ShowEditButton="True" />
                 <asp:CommandField ShowDeleteButton="True" />
-                <asp:CommandField ShowSelectButton="True" />
             </Columns>
         </asp:GridView>
 

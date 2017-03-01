@@ -28,19 +28,38 @@ public partial class CPanel_InsertStudent : System.Web.UI.Page
 
     protected void Insert_Click(object sender, EventArgs e)
     {
-        int ST_ID = int.Parse(txt_ST_ID.Text);
-        string ST_Fname = txt_ST_Fname.Text;
-        string ST_Lname = txt_ST_Lname.Text;
-        decimal ST_Salary =decimal.Parse(txt_ST_Salary.Text);
-  
-        string ST_Phone = txt_ST_Phone.Text;
-        string ST_Street = txt_ST_Street.Text;
-        string ST_City = txt_ST_City.Text;
-        string ST_Country = txt_ST_Country.Text;
-        string ST_Bdate = txt_ST_Bdate.Text;
-        int DP_ID = int.Parse(txt_DP_ID.Text);
+        if (txt_ST_ID.Text != string.Empty && txt_ST_Fname.Text != string.Empty && txt_ST_Lname.Text != string.Empty && txt_ST_Salary.Text != string.Empty
+            && txt_ST_Phone.Text != string.Empty && txt_ST_Street.Text != string.Empty && txt_ST_City.Text != string.Empty && txt_ST_Country.Text != string.Empty
+            && txt_ST_Bdate.Text != string.Empty && txt_DP_ID.Text != string.Empty)
+        {
+            int ST_ID = int.Parse(txt_ST_ID.Text);
+            string ST_Fname = txt_ST_Fname.Text;
+            string ST_Lname = txt_ST_Lname.Text;
+            decimal ST_Salary = decimal.Parse(txt_ST_Salary.Text);
 
-        StudentsLayer.InsertStudent(ST_ID, ST_Fname, ST_Lname, ST_Bdate, ST_Phone, ST_Salary, ST_Street, ST_City, ST_Country, DP_ID);
+            string ST_Phone = txt_ST_Phone.Text;
+            string ST_Street = txt_ST_Street.Text;
+            string ST_City = txt_ST_City.Text;
+            string ST_Country = txt_ST_Country.Text;
+            string ST_Bdate = txt_ST_Bdate.Text;
+            int DP_ID = int.Parse(txt_DP_ID.Text);
+
+            int s = StudentsLayer.InsertStudent(ST_ID, ST_Fname, ST_Lname, ST_Bdate, ST_Phone, ST_Salary, ST_Street, ST_City, ST_Country, DP_ID);
+            if (s <= 0) { msg.Text = "Inserting Failed"; }
+            else
+            {
+                msg.Text = "Insert Has Been Done Successfully";
+                (txt_ST_ID.Text = string.Empty; txt_ST_Fname.Text = string.Empty; txt_ST_Lname.Text = string.Empty; txt_ST_Salary.Text = string.Empty;
+                txt_ST_Phone.Text = string.Empty; txt_ST_Street.Text = string.Empty; txt_ST_City.Text = string.Empty; txt_ST_Country.Text = string.Empty;
+                txt_ST_Bdate.Text = string.Empty; txt_DP_ID.Text = string.Empty;
+            }
+        }
+        else
+        {
+            msg.Text = "All Fields Are Required";
+        }
+
+
         
     }
 }
