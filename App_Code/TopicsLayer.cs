@@ -17,7 +17,7 @@ public class TopicsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
-    public int InsertTopic(string TP_Name, int CR_ID)
+    public static int InsertTopic(string TP_Name, int CR_ID)
     {
         string str = "[Insert_Topic]";
         SqlParameter param1 = new SqlParameter("@TP_Name", TP_Name);
