@@ -18,6 +18,12 @@ public class CoursesLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectQuestionWithCourses()
+    {
+        string str = "select a.CR_ID,a.CR_Name,b.QS_ID,b.QS_Value from Courses a,Questions b  where a.CR_ID=b.CR_ID";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public int InsertCourse(string @CR_Name, int CR_Grade)
     {
         string str = "[Insert_Course]";

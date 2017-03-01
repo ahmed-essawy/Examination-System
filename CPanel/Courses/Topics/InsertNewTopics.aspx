@@ -20,16 +20,16 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 103px">Toppic Name:</td>
+                <td style="width: 103px">Topic Name:</td>
                 <td class="modal-sm" style="width: 308px">
-                    <asp:TextBox ID="TextBox1" style="width:50%" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" style="width:50%;height:25%" runat="server"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 103px">&nbsp;</td>
                 <td class="modal-sm" style="width: 308px">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="position: relative; left: 15px; top: 2px" Text="Insert" Width="135px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="position: relative; left: 11px; top: 2px" Text="Insert" Width="135px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
