@@ -22,7 +22,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Choose Department"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="DP_name" DataValueField="DP_ID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="DP_Name" DataValueField="DP_ID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAllDepartments" TypeName="DepartmentsLayer"></asp:ObjectDataSource>
                 </td>
@@ -36,11 +36,7 @@
             <tr>
                 <td style="width: 230px">&nbsp;</td>
                 <td>
-                    <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="CrystalReportSource1" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="350px" />
-                    <CR:CrystalReportSource ID="CrystalReportSource1" runat="server">
-                        <Report FileName="CPanel\Reports\Department_Students.rpt">
-                        </Report>
-                    </CR:CrystalReportSource>
+                    <CR:CrystalReportViewer ID="Dp_st_reportviewer" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="350px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
