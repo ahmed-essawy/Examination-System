@@ -11,30 +11,30 @@
             <tr>
                 <td style="width: 127px">New Department Info</td>
                 <td>
-                    <asp:Label ID="msg" runat="server"></asp:Label>
+                    <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 127px">Department Name:</td>
                 <td>
-                    <asp:TextBox ID="txt_DP_Name" style="width:50%" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_DP_Name" style="width:25%;height:20px" runat="server"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 127px">Department Manager:</td>
-                <td>
-                    <asp:DropDownList ID="Drp_DP_manager" style="width:50%"  runat="server" AutoPostBack="True" DataSourceID="Managers" DataTextField="IN_Name" DataValueField="IN_ID">
+                <td style="direction: ltr">
+                    <asp:DropDownList ID="Drp_DP_manager" style="width:25%"  runat="server" AutoPostBack="True" DataSourceID="Managers" DataTextField="IN_Name" DataValueField="IN_ID" >
                     </asp:DropDownList>
-                    <asp:ObjectDataSource ID="Managers" runat="server" SelectMethod="SelectAllDepartments_MAngers" TypeName="DepartmentsLayer"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="Managers" runat="server" SelectMethod="SelectAllManagers" TypeName="DepartmentsLayer"></asp:ObjectDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 127px">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Insert" runat="server" style="position: relative; left: 37px; top: 0px; width: 34%" Text="Insert" OnClick="Insert_Click" />
+                    <asp:Button ID="Insert" runat="server" style="position: relative; left: 37px; top: 0px; width: 15%" Text="Insert" OnClick="Insert_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

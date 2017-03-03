@@ -20,6 +20,12 @@ public class DepartmentsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectAllManagers()
+    {
+        string str = "select IN_Name,IN_ID  from Instructors ";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public static int InsertDepartment(string DP_Name , int DP_Manager)
     {
         int row_affected;
