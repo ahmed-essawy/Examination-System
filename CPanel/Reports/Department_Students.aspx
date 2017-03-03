@@ -30,7 +30,7 @@
                 <td>
                     <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="DP_Name" DataValueField="DP_ID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                     </asp:DropDownList>
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAllDepartments" TypeName="DepartmentsLayer"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAllDepartments" TypeName="DepartmentsLayer" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.ReportSource;
-using CrystalDecisions.Reporting;
-using CrystalDecisions.Shared;
+//using CrystalDecisions.ReportSource;
+//using CrystalDecisions.Reporting;
+//using CrystalDecisions.Shared;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
@@ -22,9 +22,9 @@ public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
     {
         //if (Page.IsPostBack==false)
         //{
-        //    rpt.Refresh();
+        //   Dp_st_reportviewer.RefreshReport();
         //}
-      
+
     }
     protected void Page_Init(object sender, EventArgs e)
     {
@@ -44,12 +44,12 @@ public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@DP_ID", DropDownList1.SelectedValue);
         con.Open();
         var da = new SqlDataAdapter(cmd);
-        var ds = new DataSet();
+        var ds = new DataTable();
         da.Fill(ds);
         con.Close();
         rpt = new ReportDocument();
         rpt.Load(Server.MapPath("Department_Students.rpt"));
-        rpt.SetParameterValue("DP_ID", DropDownList1.SelectedValue);
+        rpt.SetParameterValue("@DP_ID", DropDownList1.SelectedValue);
         rpt.SetDataSource(ds);
         Dp_st_reportviewer.ReportSource = rpt;
         Dp_st_reportviewer.DataBind();
