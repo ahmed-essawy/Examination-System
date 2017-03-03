@@ -16,11 +16,11 @@ public class DepartmentsLayer
     }
     public static DataSet SelectAllDepartments_MAngers()
     {
-        string str = "select d.DP_ID,d.DP_Name,ins.IN_Name from Departments d, Instructors ins where d.DP_Manager=ins.IN_ID";
+        string str = "select d.DP_ID,d.DP_Name,ins.IN_Name,ins.IN_ID from Departments d, Instructors ins where d.DP_Manager=ins.IN_ID";
         ds = DAL.RunSelect(str);
         return ds;
     }
-    public int InsertDepartment(string DP_Name , int DP_Manager)
+    public static int InsertDepartment(string DP_Name , int DP_Manager)
     {
         int row_affected;
         string nonQuery = "Insert_Department";
