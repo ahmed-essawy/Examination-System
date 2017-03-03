@@ -11,7 +11,7 @@ using System.Configuration;
 /// </summary>
 public class DAL
 {
-    private static string user = "Essawy";
+    private static string user = "Linah";
 
     public static DataSet RunSelect(string SelectQuery)
     {
