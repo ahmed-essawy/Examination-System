@@ -2,6 +2,8 @@
 
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
+<%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form id="form1" runat="server">
         <table style="width: 100%;">
@@ -34,11 +36,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 230px">&nbsp;</td>
-                <td>
-                    <CR:CrystalReportViewer ID="Dp_st_reportviewer" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="50px" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="350px" />
+                <td colspan="3">
+                    <CR:CrystalReportViewer ID="Dp_st_reportviewer" runat="server" AutoDataBind="true" />
                 </td>
-                <td>&nbsp;</td>
             </tr>
         </table>
     </form>
