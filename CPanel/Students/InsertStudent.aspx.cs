@@ -51,7 +51,7 @@ public partial class CPanel_InsertStudent : System.Web.UI.Page
                 msg.Text = "Insert Has Been Done Successfully";
                 txt_ST_ID.Text = string.Empty; txt_ST_Fname.Text = string.Empty; txt_ST_Lname.Text = string.Empty; txt_ST_Salary.Text = string.Empty;
                 txt_ST_Phone.Text = string.Empty; txt_ST_Street.Text = string.Empty; txt_ST_City.Text = string.Empty; txt_ST_Country.Text = string.Empty;
-                txt_ST_Bdate.Text = string.Empty; txt_DP_ID.Text = string.Empty;
+                txt_ST_Bdate.Text = string.Empty; txt_DP_ID.Text = string.Empty;DP_Name_drop.SelectedIndex = 0;
             }
         }
         else

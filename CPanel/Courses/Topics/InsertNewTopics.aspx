@@ -6,8 +6,17 @@
     <form id="form1" runat="server">
         <table style="width:100%;">
             <tr>
-                <td style="width: 103px; height: 26px;"></td>
-                <td class="modal-sm" style="width: 308px; height: 26px"></td>
+                <td style="width: 103px; height: 26px;">&nbsp;</td>
+                <td class="modal-sm" style="width: 308px; height: 26px">&nbsp;</td>
+                <td style="height: 26px">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="width: 103px; height: 26px;">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="New Topic Info"></asp:Label>
+                </td>
+                <td class="modal-sm" style="width: 308px; height: 26px">
+                    <asp:Label ID="msg" runat="server" ForeColor="Red"></asp:Label>
+                </td>
                 <td style="height: 26px"></td>
             </tr>
             <tr>

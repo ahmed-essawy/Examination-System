@@ -45,7 +45,7 @@ public class InstructorsLayer
         return ds;
     }
 
-    public int InsertInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, double IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
+    public static int InsertInstructor(int IN_ID, string IN_Fname, string IN_Lname, string IN_Bdate, string IN_Phone, decimal IN_Salary, string IN_Street, string IN_City, string IN_Country, int DP_ID)
     {
         int row_affected;
         string nonQuery = "Insert_Instructor";
