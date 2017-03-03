@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,9 +16,16 @@ public partial class CPanel_Departments_Insert : System.Web.UI.Page
         {
             string Dep_Name = txt_DP_Name.Text;
             int manager = int.Parse(Drp_DP_manager.SelectedValue);
-
             int affected = DepartmentsLayer.InsertDepartment(Dep_Name, manager);
-            if (affected <= 0) { msg.Text = "Insert Failed"; } else { msg.Text = "Department was Inserted Successfully"; }
+            if (affected <= 0)
+            {
+                msg.Text = "Insert Failed";
+            }
+            else
+            {
+                msg.Text = "Department was Inserted Successfully";
+                txt_DP_Name.Text = string.Empty; Drp_DP_manager.SelectedIndex = 0;
+            }
         }
         else
         {
