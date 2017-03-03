@@ -8,6 +8,20 @@
     <div class="menu_section">
         <h3>Administrator</h3>
         <ul class="nav side-menu">
+            <li><a href="/CPanel/Users/Select.aspx"><i class="fa fa-user">&nbsp;</i>Users<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="/CPanel/Users/Select.aspx">Display all</a></li>
+                    <li><a href="/CPanel/Users/Insert.aspx">New User</a></li>
+                    <li><a href="/CPanel/Users/Update_Delete.aspx">Update or Delete</a></li>
+                </ul>
+            </li>
+            <li><a href="/CPanel/Administrators/Select.aspx"><i class="fa fa-user">&nbsp;</i>Administrators<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="/CPanel/Administrators/Select.aspx">Display all</a></li>
+                    <li><a href="/CPanel/Administrators/Insert.aspx">New Administrator</a></li>
+                    <li><a href="/CPanel/Administrators/Update_Delete.aspx">Update or Delete</a></li>
+                </ul>
+            </li>
             <li><a href="/CPanel/Departments/Select.aspx"><i class="fa fa-building">&nbsp;</i>Departments<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="/CPanel/Departments/Select.aspx">Display all</a></li>

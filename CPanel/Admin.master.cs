@@ -9,6 +9,5 @@ public partial class CPanel_Admin : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
     }
 }

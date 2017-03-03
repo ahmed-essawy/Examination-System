@@ -17,7 +17,7 @@ public class TopicsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
-    public int InsertTopic(string TP_Name, int CR_ID)
+    public static int InsertTopic(string TP_Name, int CR_ID)
     {
         string str = "[Insert_Topic]";
         SqlParameter param1 = new SqlParameter("@TP_Name", TP_Name);
@@ -46,7 +46,7 @@ public class TopicsLayer
     }
     public static DataSet SelectTopics_Course(int CR_ID)
     {
-        string str = "select distinct(TP_Name), CR_Name from Topics t, Courses c where t.CR_ID=c.CR_ID and c.CR_ID="+CR_ID;
+        string str = "select TP_ID,TP_Name, c.CR_ID, CR_Name from Topics t, Courses c where t.CR_ID=c.CR_ID and c.CR_ID=" + CR_ID;
         ds = DAL.RunSelect(str);
         return ds;
     }

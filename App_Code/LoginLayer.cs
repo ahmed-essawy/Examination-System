@@ -26,7 +26,7 @@ public class LoginLayer
 
     public static DataSet SelectMembers(int ID)
     {
-        ds = DAL.RunSelect("SELECT * FROM [dbo].[ALLMEMBERS] WHERE ID = " + ID);
+        ds = DAL.RunSelect("SELECT * FROM [dbo].[AllMembers] WHERE ID = " + ID);
         return ds;
     }
 

@@ -25,6 +25,20 @@ public class DAL
         return ds;
     }
 
+    public static DataSet RunSelect(string SelectQuery, SqlParameter[] para)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
+        SqlCommand com = new SqlCommand();
+        DataSet ds = new DataSet();
+        com.CommandType = CommandType.StoredProcedure;
+        com.CommandText = SelectQuery;
+        com.Parameters.AddRange(para);
+        com.Connection = con;
+        SqlDataAdapter adapter = new SqlDataAdapter(com);
+        adapter.Fill(ds);
+        return ds;
+    }
+
     public static int RunDML(string DMLQuery, SqlParameter[] param)
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
