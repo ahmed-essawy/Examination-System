@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Insert.aspx.cs" Inherits="CPanel_Administrators_Insert" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Insert.aspx.cs" Inherits="CPanel_Administrators_Insert" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Title" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
-</asp:Content>
-
+<asp:content id="Content1" contentplaceholderid="Title" runat="Server">
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="Content" runat="Server">
+</asp:content>

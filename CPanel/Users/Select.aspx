@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_Users" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_Users" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+<asp:content id="Content1" contentplaceholderid="Title" runat="Server">
     Users
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
+</asp:content>
+<asp:content id="Content2" contentplaceholderid="Content" runat="Server">
     <form runat="server">
         <asp:GridView ID=GridView1 runat="server" AutoGenerateColumns="False" DataSourceID="UsersTable" AllowSorting="True" DataKeyNames="Username">
             <Columns>
@@ -71,4 +71,4 @@
             </UpdateParameters>
         </asp:ObjectDataSource>
     </form>
-</asp:Content>
+</asp:content>

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
 
 /// <summary>
@@ -24,10 +23,31 @@ public class LoginLayer
         return ds;
     }
 
-    public static DataSet SelectMembers(int ID)
+    public static DataRow SelectUser(String Username)
     {
-        ds = DAL.RunSelect("SELECT * FROM [dbo].[AllMembers] WHERE ID = " + ID);
-        return ds;
+        ds = DAL.RunSelect("SELECT * FROM [dbo].[Login_Data] WHERE Username = '" + Username + "'");
+        return ds.Tables[0].Rows[0];
+    }
+
+    public static DataRow SelectMembers(String Role, String ID)
+    {
+        string str = "";
+        switch (Role)
+        {
+            case "administrator":
+                str = "SELECT * FROM [dbo].[Administrators] WHERE AD_ID = " + ID;
+                break;
+
+            case "instructor":
+                str = "SELECT * FROM [dbo].[Instructors] WHERE IN_ID = " + ID;
+                break;
+
+            case "student":
+                str = "SELECT * FROM [dbo].[Students] WHERE ST_ID = " + ID;
+                break;
+        }
+        ds = DAL.RunSelect(str);
+        return ds.Tables[0].Rows[0];
     }
 
     public static int UpdateUser(string Username, string Password, string Email, string Role, int Role_ID)
@@ -39,6 +59,22 @@ public class LoginLayer
         SqlParameter param4 = new SqlParameter("@Role", Role);
         SqlParameter param5 = new SqlParameter("@Role_ID", Role_ID);
         int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2, param3, param4, param5 });
+        return affected;
+    }
+
+    public static int UpdateMember(string Role, int Role_ID, string F_Name, string L_Name, string Birthdate, string Phone, string Street, string City, string Country)
+    {
+        string str = "[Update_Profile]";
+        SqlParameter param1 = new SqlParameter("@Role", Role);
+        SqlParameter param2 = new SqlParameter("@Role_ID", Role_ID);
+        SqlParameter param3 = new SqlParameter("@F_Name", F_Name);
+        SqlParameter param4 = new SqlParameter("@L_Name", L_Name);
+        SqlParameter param5 = new SqlParameter("@Birthdate", Birthdate);
+        SqlParameter param6 = new SqlParameter("@Phone", Phone);
+        SqlParameter param7 = new SqlParameter("@Street", Street);
+        SqlParameter param8 = new SqlParameter("@City", City);
+        SqlParameter param9 = new SqlParameter("@Country", Country);
+        int affected = DAL.RunDML(str, new SqlParameter[] { param1, param2, param3, param4, param5, param6, param7, param8, param9 });
         return affected;
     }
 

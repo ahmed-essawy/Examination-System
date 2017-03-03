@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/CPanel.master" AutoEventWireup="true" CodeFile="CorrectiveByEX_ID.aspx.cs" Inherits="CPanel_CorrectiveByEX_ID" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="CorrectiveByEX_ID.aspx.cs" Inherits="CPanel_CorrectiveByEX_ID" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <form id="form1" runat="server">
-        <table style="width:100%;">
+        <table style="width: 100%;">
             <tr>
                 <td style="width: 56px">&nbsp;</td>
                 <td>&nbsp;</td>
@@ -58,4 +58,3 @@
         </table>
     </form>
 </asp:Content>
-

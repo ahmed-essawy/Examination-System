@@ -1,0 +1,12 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/ControlPanel.master" AutoEventWireup="true" CodeFile="anonymous.master.cs" Inherits="CPanel_anonymous" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    <asp:ContentPlaceHolder ID="Title" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Sidebar" runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Counters" runat="Server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="Server">
+    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
-
 
 /// <summary>
 /// Summary description for CoursesLayer
@@ -12,18 +10,21 @@ using System.Data.SqlClient;
 public class CoursesLayer
 {
     private static DataSet ds = new DataSet();
+
     public static DataSet SelectCourses()
     {
         string str = "SELECT CR_ID,CR_Name,CR_Grade FROM Courses";
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public static DataSet Display_Courses_with_AVG_Grade()
     {
         string str = "select a.CR_ID,a.CR_Name,AVG(b.Grade) as AVG_Grade from Courses a ,IN_ST_CR b where a.CR_ID = b.CR_ID  group by a.CR_ID,a.CR_Name";
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public static int InsertCourse(string @CR_Name, int CR_Grade)
     {
         string str = "[Insert_Course]";

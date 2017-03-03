@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -30,33 +30,11 @@ public partial class CPanel_Users_Insert : System.Web.UI.Page
             role_id_.SelectedIndex = 0;
         }
     }
-
     protected void Page_PreInit(object sender, EventArgs e)
     {
         if (Request.Cookies["UserInfo"] != null)
-        {
-            switch (Request.Cookies["UserInfo"]["Role"])
-            {
-                case "administrator":
-                    this.MasterPageFile = "~/CPanel/administrator.master";
-                    break;
-
-                case "instructor":
-                    this.MasterPageFile = "~/CPanel/instructor.master";
-                    break;
-
-                case "student":
-                    this.MasterPageFile = "~/CPanel/student.master";
-                    break;
-
-                default:
-                    this.MasterPageFile = "~/CPanel/anonymous.master";
-                    break;
-            }
-        }
+            this.MasterPageFile = "~/CPanel/MP/" + Request.Cookies["UserInfo"]["Role"] + ".master";
         else
-        {
             Response.Redirect("/login.aspx?BackUrl=" + HttpContext.Current.Request.Url.AbsolutePath);
-        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_DisplayAllInstructors" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_DisplayAllInstructors" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
     Instructors

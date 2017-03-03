@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
 using System.Configuration;
 
@@ -11,15 +10,16 @@ using System.Configuration;
 /// </summary>
 public class DAL
 {
-    private static string user = "Heba";
+    private static string user = "Essawy";
 
     public static DataSet RunSelect(string SelectQuery)
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
         SqlCommand com = new SqlCommand();
-        DataSet ds = new DataSet();
-        com.CommandText = SelectQuery;
         com.Connection = con;
+        com.CommandType = CommandType.Text;
+        com.CommandText = SelectQuery;
+        DataSet ds = new DataSet();
         SqlDataAdapter adapter = new SqlDataAdapter(com);
         adapter.Fill(ds);
         return ds;
@@ -29,11 +29,11 @@ public class DAL
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
         SqlCommand com = new SqlCommand();
-        DataSet ds = new DataSet();
+        com.Connection = con;
         com.CommandType = CommandType.StoredProcedure;
         com.CommandText = SelectQuery;
         com.Parameters.AddRange(para);
-        com.Connection = con;
+        DataSet ds = new DataSet();
         SqlDataAdapter adapter = new SqlDataAdapter(com);
         adapter.Fill(ds);
         return ds;
@@ -43,10 +43,10 @@ public class DAL
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
         SqlCommand com = new SqlCommand();
+        com.Connection = con;
         com.CommandType = CommandType.StoredProcedure;
         com.CommandText = DMLQuery;
         com.Parameters.AddRange(param);
-        com.Connection = con;
         con.Open();
         int affected = com.ExecuteNonQuery();
         con.Close();
@@ -57,8 +57,9 @@ public class DAL
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[user].ToString());
         SqlCommand com = new SqlCommand();
-        com.CommandText = "SELECT COUNT(*) FROM " + Table;
         com.Connection = con;
+        com.CommandType = CommandType.Text;
+        com.CommandText = "SELECT COUNT(*) FROM " + Table;
         con.Open();
         int affected = int.Parse(com.ExecuteScalar().ToString());
         con.Close();
