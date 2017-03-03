@@ -87,15 +87,8 @@
             <tr>
                 <td style="width: 139px">DP Name:</td>
                 <td>
-                    <asp:DropDownList ID="DP_Name_drop" runat="server" AutoPostBack="True" Style="width: 50%; height: 42px" OnSelectedIndexChanged="DP_Name_drop_SelectedIndexChanged" Width="236px" BackColor="White">
+                    <asp:DropDownList ID="DP_Name_drop" runat="server" AutoPostBack="True" Style="width: 50%; height: 42px" Width="236px" BackColor="White">
                     </asp:DropDownList>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 139px">DP ID:</td>
-                <td>
-                    <asp:TextBox ID="txt_DP_ID" Style="width: 50%" runat="server" ReadOnly="True"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>

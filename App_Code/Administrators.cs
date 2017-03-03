@@ -16,7 +16,7 @@ public class AdministratorsLayer
         return ds;
     }
 
-    public int InsertAdministrator(int AD_ID, string AD_Fname, string AD_Lname, string AD_Bdate, string AD_Phone, double AD_Salary, string AD_Street, string AD_City, string AD_Country)
+    public static int InsertAdministrator(int AD_ID, string AD_Fname, string AD_Lname, string AD_Bdate, string AD_Phone, decimal AD_Salary, string AD_Street, string AD_City, string AD_Country)
     {
         int row_affected;
         string nonQuery = "Insert_Administrator";
@@ -95,7 +95,7 @@ public class AdministratorsLayer
         return row_affected;
     }
 
-    public int DeleteAdministrator(int AD_ID)
+    public static int DeleteAdministrator(int AD_ID)
     {
         int row_affected;
         string nonQuery = "Delete_Administrator";
