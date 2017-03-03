@@ -9,13 +9,9 @@ public partial class CPanel_ControlPanel : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Cookies["UserInfo"] != null)
+        if (Request.Cookies["UserInfo"] == null)
         {
-            string name = Request.Cookies["UserInfo"]["name"];
-        }
-        else
-        {
-            //Response.Redirect("/login.aspx");
+            Response.Redirect("/login.aspx");
         }
     }
 }
