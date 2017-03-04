@@ -5,15 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class CPanel_Instructors_Instructor_per_courses : System.Web.UI.Page
+public partial class CPanel_Insert_Update_Delete_Topics_per_Course : System.Web.UI.Page
 {
-    private ObjectDataSource ObjDS;
-
     protected void Page_Load(object sender, EventArgs e)
-    {
-    }
-
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
     {
     }
 

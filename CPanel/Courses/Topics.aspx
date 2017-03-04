@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Topics.aspx.cs" Inherits="DisplayTopicsPerCourse" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Courses
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">
         <asp:DropDownList ID="CR_Names" runat="server" DataSourceID="ObjectDataSource1" DataTextField="CR_Name" Height="24px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="1059px" AutoPostBack="True" DataValueField="CR_ID">
         </asp:DropDownList>

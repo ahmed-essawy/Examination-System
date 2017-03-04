@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="AnwersVsCorrect.aspx.cs" Inherits="CPanel_ST_AnsVSmodelAns" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Students
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">
         <table style="width: 100%;">
             <tr>

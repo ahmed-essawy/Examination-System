@@ -9,7 +9,8 @@ public partial class CPanel_Admin : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string[] section = {"US"
+        string[] section = {
+            "/CPanel/aa"
         };
         if (section.All(BindingContainer.TemplateSourceDirectory.Contains))
             Response.Redirect("/CPanel/permission.aspx");

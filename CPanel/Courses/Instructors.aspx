@@ -1,51 +1,32 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Instructors.aspx.cs" Inherits="CPanel_Instructors_Instructor_per_courses" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Title" Runat="Server">
-    Instructor_per_courses
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Courses
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
-    <form id="form1" runat="server">
-        <table style="width:100%;">
-            <tr>
-                <td style="width: 200px; height: 96px"></td>
-                <td style="height: 96px"></td>
-                <td style="height: 96px"></td>
-            </tr>
-            <tr>
-                <td style="width: 200px; height: 11px">Select Course</td>
-                <td style="height: 11px">
-                    <asp:DropDownList ID="Course_DropList" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="CR_Name" DataValueField="CR_ID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                    </asp:DropDownList>
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectCourses" TypeName="CoursesLayer"></asp:ObjectDataSource>
-                </td>
-                <td style="height: 11px"></td>
-            </tr>
-            <tr>
-                <td style="width: 200px; height: 35px"></td>
-                <td style="height: 35px"></td>
-                <td style="height: 35px"></td>
-            </tr>
-            <tr>
-                <td style="width: 200px">&nbsp;</td>
-                <td>
-                    <asp:GridView ID="Instructors_GV" runat="server" AutoGenerateColumns="False">
-                        <Columns>
-                            <asp:TemplateField HeaderText="Instructor ID">
-                                <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("IN_ID") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Instructor Name">
-                                <ItemTemplate>
-                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("IN_Name") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
+    <form id="form2" runat="server">
+        <asp:DropDownList ID="CR_Names" runat="server" DataSourceID="ObjectDataSource2" DataTextField="CR_Name" Height="24px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Width="1059px" AutoPostBack="True" DataValueField="CR_ID">
+        </asp:DropDownList>
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="SelectCourses" TypeName="CoursesLayer"></asp:ObjectDataSource>
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="InstructorsTable">
+            <Columns>
+                <asp:TemplateField HeaderText="Instructor ID">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("IN_ID") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Instructor Name">
+                    <ItemTemplate>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("IN_Name") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+        <asp:ObjectDataSource ID="InstructorsTable" runat="server" SelectMethod="SelectInstructor_Courses" TypeName="InstructorsLayer">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="CR_Names" DefaultValue="0" Name="cr_id" PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
     </form>
 </asp:Content>
-

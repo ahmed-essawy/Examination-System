@@ -18,6 +18,13 @@ public class CoursesLayer
         return ds;
     }
 
+    public static DataSet SelectQuestionWithCourses()
+    {
+        string str = "select a.CR_ID,a.CR_Name,b.QS_ID,b.QS_Value from Courses a,Questions b  where a.CR_ID=b.CR_ID";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+
     public static DataSet Display_Courses_with_AVG_Grade()
     {
         string str = "select a.CR_ID,a.CR_Name,AVG(b.Grade) as AVG_Grade from Courses a ,IN_ST_CR b where a.CR_ID = b.CR_ID  group by a.CR_ID,a.CR_Name";

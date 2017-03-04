@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Answers.aspx.cs" Inherits="CPanel_Students_StudentAnswers" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Students
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">
-        <table style="width:100%;">
+        <table style="width: 100%;">
             <tr>
                 <td style="width: 71px">&nbsp;</td>
                 <td class="modal-sm" style="width: 237px">&nbsp;</td>
@@ -19,17 +22,17 @@
                 <td colspan="3">
                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="StudentAnswers">
                         <Columns>
-                            <asp:TemplateField HeaderText="ST_ID">
+                            <asp:TemplateField HeaderText="ID">
                                 <ItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("ST_ID") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="ST_Name">
+                            <asp:TemplateField HeaderText="Name">
                                 <ItemTemplate>
                                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("ST_Name") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="QS_ID">
+                            <asp:TemplateField HeaderText="Question">
                                 <ItemTemplate>
                                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("QS_ID") %>'></asp:Label>
                                 </ItemTemplate>
@@ -51,4 +54,3 @@
         </table>
     </form>
 </asp:Content>
-

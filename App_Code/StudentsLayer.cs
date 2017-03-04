@@ -69,14 +69,14 @@ public class StudentsLayer
 
     public static DataSet DisplayExamByDate(string Date)
     {
-        string str = "select a.ST_Name,convert(varchar(10),b.[Date]) [Date],b.ST_ID   from Students a,ST_EX_Answers b where a.ST_ID=b.ST_ID and b.[Date]='" + Date + "'";
+        string str = "select a.ST_Name,convert(varchar(10),b.[Date]) [Date],b.ST_ID,b.EX_ID   from Students a,ST_EX_Answers b where a.ST_ID=b.ST_ID and b.[Date]='" + Date + "'";
         ds = DAL.RunSelect(str);
         return ds;
     }
 
     public static DataSet DisplayAllExamsDates()
     {
-        string str = "select convert(varchar(10),Date)[Date] from ST_EX_Answers";
+        string str = "select convert(varchar(10),Date) AS [Date] from ST_EX_Answers";
         ds = DAL.RunSelect(str);
         return ds;
     }
