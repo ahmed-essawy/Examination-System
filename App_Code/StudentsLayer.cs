@@ -81,16 +81,16 @@ public class StudentsLayer
         return ds;
     }
 
-    public static DataSet DisplayCorrectiveByEX_ID(int EX_ID)
+    public static DataSet DisplayCorrectiveByCR_ID(int CR_ID)
     {
-        SqlParameter par1 = new SqlParameter("@EX_ID", EX_ID);
+        SqlParameter par1 = new SqlParameter("@CR_ID", CR_ID);
         ds = DAL.RunSelect("Check_Corrective", new SqlParameter[] { par1 });
         return ds;
     }
 
-    public static DataSet DisplayEX_IDs()
+    public static DataSet DisplayCR_IDs()
     {
-        string str = "select EX_ID from Exams";
+        string str = "select CR_ID,CR_Name from Courses";
         ds = DAL.RunSelect(str);
         return ds;
     }
