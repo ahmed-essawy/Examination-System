@@ -17,7 +17,12 @@ public class QuestionsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
-
+    public static DataSet SelectCourseQuestions( int CR_ID)
+    {
+        string str = "SELECT [QS_ID], [CR_Name], [QS_Value], [QS_Correct], [QS_Grade] FROM [dbo].[Questions], [dbo].[Courses] WHERE [dbo].[Questions].CR_ID = [dbo].[Courses].[CR_ID] and [dbo].[Questions].CR_ID="+ CR_ID;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public static int InsertQuestionMCQ(string CR_Name, string Question, string Choice1, string Choice2, string Choice3, string Choice4, string Correct_Answer)
     {
         string str = "[Insert_Question_MCQ]";
@@ -59,4 +64,11 @@ public class QuestionsLayer
         int affected = DAL.RunDML(str, new SqlParameter[] { param1 });
         return affected;
     }
+    public static DataSet SelectCourse_ID()
+    {
+        string str = "select distinct(ceq.CR_ID),cs.CR_Name from  CR_EX_QS ceq ,Courses cs where cs.CR_ID=ceq.CR_ID";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+    
 }
