@@ -34,7 +34,7 @@
             <tr>
                 <td>Password</td>
                 <td>
-                    <asp:TextBox ID=pass runat="server" Enabled=false></asp:TextBox></td>
+                    <asp:TextBox ID=pass runat="server" type="password" Enabled=false></asp:TextBox></td>
                 <td>
                     <asp:RequiredFieldValidator ID=Requiredpass runat="server" ErrorMessage="Password is required" ControlToValidate=pass></asp:RequiredFieldValidator></td>
             </tr>

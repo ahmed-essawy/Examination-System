@@ -92,6 +92,18 @@ public class LoginLayer
         return ds;
     }
 
+    public static string Forget_Login(string Username, string Email)
+    {
+        string password = String.Empty;
+        ds = DAL.RunSelect("SELECT * FROM [dbo].[Login_Data] WHERE Username = '" + Username + "' AND Email = '" + Email + "'");
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            password = System.Web.Security.Membership.GeneratePassword(10, 3);
+            UpdateUser(ds.Tables[0].Rows[0][0].ToString(), password, ds.Tables[0].Rows[0][2].ToString(), ds.Tables[0].Rows[0][3].ToString(), int.Parse(ds.Tables[0].Rows[0][4].ToString()));
+        }
+        return password;
+    }
+
     public static DataRow Get_Admin(int ID)
     {
         ds = DAL.RunSelect("SELECT * FROM [dbo].[Administrators] WHERE AD_ID = " + ID);
