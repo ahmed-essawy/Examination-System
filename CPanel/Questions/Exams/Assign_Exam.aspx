@@ -24,8 +24,13 @@
             <tr>
                 <td class="modal-sm" style="width: 150px">Exam ID</td>
                 <td style="width: 333px">
-                    <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="117px">
+                    <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="EX_ID" DataValueField="EX_ID" Height="16px" Width="117px">
                     </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectEXAMID_ByStudentID" TypeName="ExamsLayer">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="DropDownList1" DefaultValue="0" Name="ST_ID" PropertyName="SelectedValue" Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -33,7 +38,14 @@
                 <td class="modal-sm" style="width: 150px">&nbsp;</td>
                 <td style="width: 333px">&nbsp;</td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Assign Exam" Width="150px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Assign Exam" Width="150px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="modal-sm" style="width: 150px">&nbsp;</td>
+                <td style="width: 333px">&nbsp;</td>
+                <td>
+                    <asp:Label ID="msg" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>

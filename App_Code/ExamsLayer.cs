@@ -16,6 +16,12 @@ public class ExamsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet SelectEXAMID_ByStudentID(int ST_ID)
+    {
+        string str = "SELECT DISTINCT EX_ID, Date FROM IN_ST_CR isc, CR_EX_QS ces WHERE isc.CR_ID = ces.CR_ID AND ST_ID = "+ ST_ID;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public static int InsertExam(string CR_Name, int MCQ_Num, int TF_Num)
     {
         int row_affected;
@@ -28,5 +34,15 @@ public class ExamsLayer
         row_affected = DAL.RunDML(nonQuery, parameters);
         return row_affected;
     }
-    
+    public static int Assign_Exam(int ST_ID,int EX_ID)
+    {
+        int row_affected;
+        string nonQuery = "Insert_Student_Exam";
+        SqlParameter[] p1 = new SqlParameter[] {
+          new SqlParameter("@ST_ID",ST_ID),
+         new SqlParameter("@EX_ID", EX_ID)};
+        row_affected = DAL.RunDML(nonQuery, p1);
+        return row_affected;
+    }
+
 }

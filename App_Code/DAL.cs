@@ -10,7 +10,7 @@ using System.Configuration;
 /// </summary>
 public class DAL
 {
-    private static string user = "Heba";
+    private static string user = "Linah";
 
     public static DataSet RunSelect(string SelectQuery)
     {
