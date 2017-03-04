@@ -5,65 +5,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Sidebar" runat="Server">
     <div class="menu_section">
-        <h3>Instructor</h3>
+        <h3>Instructors</h3>
         <ul class="nav side-menu">
-            <li><a href="/CPanel/Users/Select.aspx"><i class="fa fa-user">&nbsp;</i>Users<span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-users">&nbsp;</i>Students<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="/CPanel/Users/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Users/Insert.aspx">New User</a></li>
-                    <li><a href="/CPanel/Users/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Students/Specific_Student.aspx">Specific Student</a></li>
+                    <li><a href="/CPanel/Students/Courses.aspx">Courses</a></li>
+                    <li><a href="/CPanel/Students/AnwersVsCorrect.aspx">Correct & Model Answer</a></li>
+                    <li><a href="/CPanel/Students/Results.aspx">Results</a></li>
+                    <li><a href="/CPanel/Students/CorrectiveByDepartment.aspx">Corrective By Department</a></li>
+                    <li><a href="/CPanel/Students/CorrectiveByCourse.aspx">Corrective By Course</a></li>
+                    <li><a href="/CPanel/Students/Exams.aspx">Exams</a></li>
                 </ul>
             </li>
-            <li><a href="/CPanel/Administrators/Select.aspx"><i class="fa fa-user">&nbsp;</i>Administrators<span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-text">&nbsp;</i>Courses<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="/CPanel/Administrators/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Administrators/Insert.aspx">New Administrator</a></li>
-                    <li><a href="/CPanel/Administrators/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Courses/Questions.aspx">Questions</a></li>
                 </ul>
             </li>
-            <li><a href="/CPanel/Departments/Select.aspx"><i class="fa fa-building">&nbsp;</i>Departments<span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-book">&nbsp;</i>Exams<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="/CPanel/Departments/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Departments/Insert.aspx">New Department</a></li>
-                    <li><a href="/CPanel/Departments/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Questions/Exams/By_Date.aspx">By Date</a></li>
+                    <li><a href="/CPanel/Questions/Exams/Assign_Exam.aspx">Assign Exam/a></li>
                 </ul>
             </li>
-            <li><a href="/CPanel/Instructors/Select.aspx"><i class="fa fa-male">&nbsp;</i>Instructors<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="/CPanel/Instructors/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Instructors/Insert.aspx">New Instructor</a></li>
-                    <li><a href="/CPanel/Instructors/Update_Delete.aspx">Update or Delete</a></li>
-                </ul>
-            </li>
-            <li><a href="/CPanel/Students/Select.aspx"><i class="fa fa-users">&nbsp;</i>Students<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="/CPanel/Students/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Students/Insert.aspx">New Student</a></li>
-                    <li><a href="/CPanel/Students/Update_Delete.aspx">Update or Delete</a></li>
-                </ul>
-            </li>
-            <li><a href="/CPanel/Courses/Select.aspx"><i class="fa fa-book">&nbsp;</i>Courses<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="/CPanel/Courses/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Courses/Insert.aspx">New Course</a></li>
-                    <li><a href="/CPanel/Courses/Update_Delete.aspx">Update or Delete</a></li>
-                </ul>
-            </li>
-            <li><a href="/CPanel/Courses/Topics/Select.aspx"><i class="fa fa-bookmark">&nbsp;</i>Topics<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="/CPanel/Courses/Topics/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Courses/Topics/Insert.aspx">New Topic</a></li>
-                    <li><a href="/CPanel/Courses/Topics/Update_Delete.aspx">Update or Delete</a></li>
-                </ul>
-            </li>
-            <li><a href="/CPanel/Questions/Select.aspx"><i class="fa fa-question">&nbsp;</i>Questions<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="/CPanel/Questions/Select.aspx">Display all</a></li>
-                    <li><a href="/CPanel/Questions/Insert.aspx">New Question</a></li>
-                    <li><a href="/CPanel/Questions/Update_Delete.aspx">Update or Delete</a></li>
-                </ul>
-            </li>
-            <li><a href="/CPanel/Questions/Generate_Exam.aspx"><i class="fa fa-question">&nbsp;</i>Generate Exam</a></li>
         </ul>
     </div>
 </asp:Content>
@@ -89,18 +54,6 @@
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
             <span class="count_top"><i class="fa fa-book">&nbsp;</i>Total Courses</span>
             <div class="count green"><%= Counters.Courses() %></div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-            <span class="count_top"><i class="fa fa-bookmark">&nbsp;</i>Total Topics</span>
-            <div class="count"><%= Counters.Topics() %></div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-            <span class="count_top"><i class="fa fa-file-text">&nbsp;</i>Total Exams</span>
-            <div class="count"><%= Counters.Exams() %></div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-            <span class="count_top"><i class="fa fa-question">&nbsp;</i>Total Questions</span>
-            <div class="count"><%= Counters.Questions() %></div>
         </div>
     </div>
 </asp:Content>

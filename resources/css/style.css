@@ -125,7 +125,7 @@ img {
 /*------------ HEADER ------------*/
 #header {
 	background: #4e5944 url(/resources/imgs/bg-header.jpg) repeat-x left bottom;
-	padding: 10px 0;
+	padding: 40px 0 46px;
 }
 /** logo **/
 .logo {

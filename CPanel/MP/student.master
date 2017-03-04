@@ -4,6 +4,18 @@
     <asp:ContentPlaceHolder ID="Title" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Sidebar" runat="Server">
+    <div class="menu_section">
+        <h3>Students</h3>
+        <ul class="nav side-menu">
+            <li><a><i class="fa fa-book">&nbsp;</i>Courses<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="/CPanel/Courses/Instructors.aspx">Instructors</a></li>
+                    <li><a href="/CPanel/Courses/Topics.aspx">Topics</a></li>
+                </ul>
+            </li>
+            <li><a href="/CPanel/Questions/Exams/Student.aspx"><i class="fa fa-question">&nbsp;</i>Exams</a></li>
+        </ul>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Counters" runat="Server">
 </asp:Content>

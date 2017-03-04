@@ -7,12 +7,12 @@
     <form id="form1" runat="server">
         <asp:GridView ID="GridView1" runat="server" DataSourceID="DepartmentObject" BorderWidth="2px" Caption="Departments" CaptionAlign="Top" CellPadding="10" CellSpacing="10" AutoGenerateColumns="False">
             <Columns>
-                <asp:TemplateField HeaderText="Department ID">
+                <asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("DP_ID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Department Name">
+                <asp:TemplateField HeaderText="Name">
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("DP_Name") %>'></asp:Label>
                     </ItemTemplate>

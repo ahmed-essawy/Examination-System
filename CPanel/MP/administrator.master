@@ -34,6 +34,7 @@
                     <li><a href="/CPanel/Instructors/Select.aspx">Display all</a></li>
                     <li><a href="/CPanel/Instructors/Insert.aspx">New Instructor</a></li>
                     <li><a href="/CPanel/Instructors/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Instructors/Salary.aspx">Salaries</a></li>
                 </ul>
             </li>
             <li><a href="/CPanel/Students/Select.aspx"><i class="fa fa-users">&nbsp;</i>Students<span class="fa fa-chevron-down"></span></a>
@@ -48,6 +49,9 @@
                     <li><a href="/CPanel/Courses/Select.aspx">Display all</a></li>
                     <li><a href="/CPanel/Courses/Insert.aspx">New Course</a></li>
                     <li><a href="/CPanel/Courses/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Courses/Avg_Grade.aspx">Averages</a></li>
+                    <li><a href="/CPanel/Courses/Instructors.aspx">Instructors</a></li>
+                    <li><a href="/CPanel/Courses/Topics.aspx">Topics</a></li>
                 </ul>
             </li>
             <li><a href="/CPanel/Courses/Topics/Select.aspx"><i class="fa fa-bookmark">&nbsp;</i>Topics<span class="fa fa-chevron-down"></span></a>
@@ -55,6 +59,7 @@
                     <li><a href="/CPanel/Courses/Topics/Select.aspx">Display all</a></li>
                     <li><a href="/CPanel/Courses/Topics/Insert.aspx">New Topic</a></li>
                     <li><a href="/CPanel/Courses/Topics/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Courses/Topics/Update_Delete_PerCourse.aspx">Per Course</a></li>
                 </ul>
             </li>
             <li><a href="/CPanel/Questions/Select.aspx"><i class="fa fa-question">&nbsp;</i>Questions<span class="fa fa-chevron-down"></span></a>
@@ -62,9 +67,10 @@
                     <li><a href="/CPanel/Questions/Select.aspx">Display all</a></li>
                     <li><a href="/CPanel/Questions/Insert.aspx">New Question</a></li>
                     <li><a href="/CPanel/Questions/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Questions/PerCourse.aspx">Per Course</a></li>
                 </ul>
             </li>
-            <li><a href="/CPanel/Questions/Generate_Exam.aspx"><i class="fa fa-question">&nbsp;</i>Generate Exam</a></li>
+            <li><a href="/CPanel/Questions/Exams/Generate_Exam.aspx"><i class="fa fa-question">&nbsp;</i>Generate Exam</a></li>
         </ul>
     </div>
 </asp:Content>

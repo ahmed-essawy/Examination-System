@@ -108,7 +108,7 @@
                         <asp:Label ID="ST_JoinDate_des" runat="server" Text='<%# Bind("ST_JoinDate") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="DP_Name">
+                <asp:TemplateField HeaderText="Department">
                     <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="Dep" DataTextField="DP_Name" DataValueField="DP_ID" SelectedValue="<%# Bind('DP_ID') %>">
                         </asp:DropDownList>
