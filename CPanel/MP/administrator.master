@@ -26,6 +26,7 @@
                     <li><a href="/CPanel/Departments/Select.aspx">Display all</a></li>
                     <li><a href="/CPanel/Departments/Insert.aspx">New Department</a></li>
                     <li><a href="/CPanel/Departments/Update_Delete.aspx">Update or Delete</a></li>
+                    <li><a href="/CPanel/Departments/WithManagers.aspx">With Managers</a></li>
                 </ul>
             </li>
             <li><a href="/CPanel/Instructors/Select.aspx"><i class="fa fa-male">&nbsp;</i>Instructors<span class="fa fa-chevron-down"></span></a>
