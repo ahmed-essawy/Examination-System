@@ -108,6 +108,12 @@ public class StudentsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+    public static DataSet GetExID_BY_STID(int ST_ID)
+    {
+        string str = "select distinct(EX_ID)  from ST_EX_Answers  where ST_ID=" + ST_ID;
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
 
     public static int InsertStudent(int ST_ID, string ST_Fname, string ST_Lname, string ST_Bdate, string ST_Phone, decimal ST_Salary, string ST_Street, string ST_City, string ST_Country, int DP_ID)
     {

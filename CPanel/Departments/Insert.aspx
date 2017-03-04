@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/CPanel.master" AutoEventWireup="true" CodeFile="Insert.aspx.cs" Inherits="CPanel_Departments_Insert" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Insert.aspx.cs" Inherits="CPanel_Departments_Insert" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
     Departments

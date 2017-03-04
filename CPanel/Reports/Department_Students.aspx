@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Department_Students.aspx.cs" Inherits="CPanel_Reports_Department_Students" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Department_Students.aspx.cs" Inherits="CPanel_Reports_Department_Students" %>
 
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
@@ -10,8 +10,7 @@
     Instructor_per_courses
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
-    <script lang="javaScript" type="text/javascript" src="crystalreportviewers13/js/crviewer/crv.js">
-</script>
+    <script lang="javaScript" type="text/javascript" src="crystalreportviewers13/js/crviewer/crv.js"></script>
     <form id="form1" runat="server">
         <table class="nav-justified">
             <tr>
@@ -22,9 +21,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 230px">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="width: 230px; height: 35px;"></td>
+                <td style="height: 35px"></td>
+                <td style="height: 35px"></td>
             </tr>
             <tr>
                 <td style="width: 230px">
@@ -44,7 +43,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <CR:CrystalReportViewer ID="Dp_st_reportviewer" runat="server" AutoDataBind="true" />
+                    <CR:CrystalReportViewer ID="Dp_st_reportviewer" runat="server" AutoDataBind="True" ToolPanelView="None" />
                 </td>
             </tr>
         </table>

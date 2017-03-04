@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/Admin.master" AutoEventWireup="true" CodeFile="Instructor_Courses.aspx.cs" Inherits="CPanel_Reports_Instructor_Courses" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Instructor_Courses.aspx.cs" Inherits="CPanel_Reports_Instructor_Courses" %>
 
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
@@ -21,7 +21,7 @@
             <tr>
                 <td style="width: 125px">Instructor Name</td>
                 <td>
-                    <asp:DropDownList ID="Instructors_DPList" runat="server" AutoPostBack="True" DataSourceID="Instructors_Object" DataTextField="IN_Name" DataValueField="IN_ID" OnSelectedIndexChanged="Instructors_DPList_SelectedIndexChanged">
+                    <asp:DropDownList ID="Instructors_DPList" runat="server" AutoPostBack="True" DataSourceID="Instructors_Object" DataTextField="IN_Name" DataValueField="IN_ID" OnSelectedIndexChanged="Instructors_DPList_SelectedIndexChanged" Width="119px">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="Instructors_Object" runat="server" SelectMethod="SelectAllInstructors" TypeName="InstructorsLayer"></asp:ObjectDataSource>
                 </td>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <CR:CrystalReportViewer ID="IN_CR_reportViewer" runat="server" AutoDataBind="true" />
+                    <CR:CrystalReportViewer ID="IN_CR_reportViewer" runat="server" AutoDataBind="true" ToolPanelView="None" />
                 </td>
             </tr>
         </table>

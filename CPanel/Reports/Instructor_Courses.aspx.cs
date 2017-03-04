@@ -20,7 +20,10 @@ public partial class CPanel_Reports_Instructor_Courses : System.Web.UI.Page
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Linah"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Page.IsPostBack == false)
+        {
+            IN_CR_reportViewer.RefreshReport();
+        }
     }
 
     protected void Instructors_DPList_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,20 +40,28 @@ public partial class CPanel_Reports_Instructor_Courses : System.Web.UI.Page
         //rpt.SetDataSource(ObjDS);
         //IN_CR_reportViewer.ReportSource = rpt;
         //IN_CR_reportViewer.DataBind();
+        ///////////////////////////////////////////////////////////////////////
         var cmd = new SqlCommand("Get_Instructor_Courses", con);
         cmd.CommandType = CommandType.StoredProcedure;
         cmd.Parameters.AddWithValue("@IN_ID", Instructors_DPList.SelectedValue);
         con.Open();
         var da = new SqlDataAdapter(cmd);
-        var ds = new DataTable();
-        da.Fill(ds);
+        var dt = new DataTable();
+        da.Fill(dt);
         con.Close();
-        rpt = new ReportDocument();
-        rpt.Load(Server.MapPath("Instructor_courses.rpt"));
-        rpt.SetParameterValue("@IN_ID", Instructors_DPList.SelectedValue);
-        rpt.SetDataSource(ds);
-        IN_CR_reportViewer.ReportSource = rpt;
-        IN_CR_reportViewer.DataBind();
-
+        if (dt != null && dt.Rows.Count > 0)
+        {
+            rpt = new ReportDocument();
+            rpt.Load(Server.MapPath("Instructor_courses.rpt"));
+            rpt.SetParameterValue("@IN_ID", Instructors_DPList.SelectedValue);
+            rpt.SetDataSource(dt);
+            IN_CR_reportViewer.ReportSource = rpt;
+            IN_CR_reportViewer.DataBind();
+        }
+        else
+        {
+            IN_CR_reportViewer.ReportSource = null;
+            IN_CR_reportViewer.DataBind();
+        }
     }
 }

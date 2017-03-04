@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
-/// <summary>
-/// Summary description for ExamsLayer
-/// </summary>
 public class ExamsLayer
 {
+    private static DataSet ds = new DataSet();
+
+    public static DataSet SelectAllInstructors()
+    {
+        string str = "select * from Exams";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
     public static int InsertExam(string CR_Name, int MCQ_Num, int TF_Num)
     {
         int row_affected;
@@ -20,4 +28,5 @@ public class ExamsLayer
         row_affected = DAL.RunDML(nonQuery, parameters);
         return row_affected;
     }
+    
 }

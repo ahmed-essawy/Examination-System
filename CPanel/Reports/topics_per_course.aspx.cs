@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
-public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
+public partial class CPanel_Reports_topics_per_course : System.Web.UI.Page
 {
     ReportDocument rpt;
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Linah"].ToString());
@@ -21,21 +21,15 @@ public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
     {
         if (Page.IsPostBack == false)
         {
-            Dp_st_reportviewer.RefreshReport();
+            CR_Topics_Viewer.RefreshReport();
         }
-
-    }
-    protected void Page_Init(object sender, EventArgs e)
-    {
-
     }
 
-
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    protected void Course_DDL_SelectedIndexChanged(object sender, EventArgs e)
     {
-        var cmd = new SqlCommand("Get_students_by_Department", con);
+        var cmd = new SqlCommand("Get_Course_Topics", con);
         cmd.CommandType = CommandType.StoredProcedure;
-        cmd.Parameters.AddWithValue("@DP_ID", Department_DPList.SelectedValue);
+        cmd.Parameters.AddWithValue("@CR_ID", Course_DDL.SelectedValue);
         con.Open();
         var da = new SqlDataAdapter(cmd);
         var dt = new DataTable();
@@ -44,16 +38,17 @@ public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
         if (dt != null && dt.Rows.Count > 0)
         {
             rpt = new ReportDocument();
-            rpt.Load(Server.MapPath("Department_Students.rpt"));
-            rpt.SetParameterValue("@DP_ID", Department_DPList.SelectedValue);
+            rpt.Load(Server.MapPath("Topics_per_course_id.rpt"));
+            rpt.SetParameterValue("@CR_ID", Course_DDL.SelectedValue);
             rpt.SetDataSource(dt);
-            Dp_st_reportviewer.ReportSource = rpt;
-            Dp_st_reportviewer.DataBind();
+            CR_Topics_Viewer.ReportSource = rpt;
+            CR_Topics_Viewer.DataBind();
+
         }
         else
         {
-            Dp_st_reportviewer.ReportSource = null;
-            Dp_st_reportviewer.DataBind();
+            CR_Topics_Viewer.ReportSource = null;
+            CR_Topics_Viewer.DataBind();
         }
     }
 }
