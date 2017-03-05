@@ -46,6 +46,12 @@ public class StudentsLayer
         return ds;
     }
 
+    public static DataRow StudentCourseGrade(int ST_ID, int EX_ID)
+    {
+        string str = "SELECT DISTINCT Grade, CR_Grade FROM IN_ST_CR, CR_EX_QS, Courses C WHERE IN_ST_CR.CR_ID = C.CR_ID AND CR_EX_QS.CR_ID = C.CR_ID AND IN_ST_CR.ST_ID = " + ST_ID + " AND CR_EX_QS.EX_ID = " + EX_ID;
+        return DAL.RunSelect(str).Tables[0].Rows[0];
+    }
+
     public static DataSet Display_EX_ST_ANS_CorrAns(int ST_ID)
     {
         string str = "select a.EX_ID,a.Answer,b.QS_Correct,c.ST_Name   from ST_EX_Answers a,Questions b,Students c   where a.QS_ID=b.QS_ID and a.ST_ID=c.ST_ID and c.ST_ID=" + ST_ID;
@@ -108,6 +114,7 @@ public class StudentsLayer
         ds = DAL.RunSelect(str);
         return ds;
     }
+
     public static DataSet GetExID_BY_STID(int ST_ID)
     {
         string str = "select distinct(EX_ID)  from ST_EX_Answers  where ST_ID=" + ST_ID;
