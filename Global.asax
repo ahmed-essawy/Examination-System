@@ -24,6 +24,7 @@
     {
         Session.Add("Username", null);
         Session.Add("Password", null);
+        Session.Add("ID", null);
     }
 
     void Session_End(object sender, EventArgs e)

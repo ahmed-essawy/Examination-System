@@ -22,6 +22,7 @@ public partial class login : System.Web.UI.Page
             int role_id = int.Parse(login_ds.Tables[0].Rows[0]["Role_ID"].ToString());
             Session.Add("Username", user.Text);
             Session.Add("Password", pass.Text);
+            Session.Add("ID", role_id);
             string username = user.Text;
             HttpCookie UserInfo = new HttpCookie("UserInfo");
             DataRow UserInfo_DR;

@@ -43,6 +43,13 @@ public class ExamsLayer
         return finished;
     }
 
+    public static DataSet SelectExamsForStudent(int ST_ID)
+    {
+        string str = "SELECT EX_ID FROM ST_EX_Answers WHERE Finished IN (0,1) AND ST_ID = " + ST_ID + " GROUP BY EX_ID";
+        ds = DAL.RunSelect(str);
+        return ds;
+    }
+
     public static DataSet SelectQuestions(int EX_ID)
     {
         string str = "SELECT QS_ID FROM CR_EX_QS where EX_ID = " + EX_ID + "-- ORDER BY NEWID()";
