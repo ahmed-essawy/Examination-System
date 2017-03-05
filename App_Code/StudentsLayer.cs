@@ -41,7 +41,7 @@ public class StudentsLayer
 
     public static DataSet DisplayStudentCourses(int ST_ID)
     {
-        string str = "select a.CR_Name from Courses a,IN_ST_CR c where  a.CR_ID=c.CR_ID and c.ST_ID= " + ST_ID;
+        string str = "select DISTINCT a.CR_Name from Courses a,IN_ST_CR c where  a.CR_ID=c.CR_ID and c.ST_ID= " + ST_ID;
         ds = DAL.RunSelect(str);
         return ds;
     }
