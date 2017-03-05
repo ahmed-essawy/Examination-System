@@ -51,4 +51,11 @@ public partial class CPanel_Reports_topics_per_course : System.Web.UI.Page
             CR_Topics_Viewer.DataBind();
         }
     }
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Request.Cookies["UserInfo"] != null)
+            this.MasterPageFile = "~/CPanel/MP/" + Request.Cookies["UserInfo"]["Role"] + ".master";
+        else
+            Response.Redirect("/login.aspx?BackUrl=" + HttpContext.Current.Request.Url.AbsolutePath);
+    }
 }

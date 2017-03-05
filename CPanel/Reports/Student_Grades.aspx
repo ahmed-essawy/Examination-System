@@ -5,6 +5,7 @@
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" Runat="Server">
+    Student Grades
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
     <script lang="javaScript" type="text/javascript" src="crystalreportviewers13/js/crviewer/crv.js">

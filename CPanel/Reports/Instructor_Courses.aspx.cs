@@ -64,4 +64,11 @@ public partial class CPanel_Reports_Instructor_Courses : System.Web.UI.Page
             IN_CR_reportViewer.DataBind();
         }
     }
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Request.Cookies["UserInfo"] != null)
+            this.MasterPageFile = "~/CPanel/MP/" + Request.Cookies["UserInfo"]["Role"] + ".master";
+        else
+            Response.Redirect("/login.aspx?BackUrl=" + HttpContext.Current.Request.Url.AbsolutePath);
+    }
 }

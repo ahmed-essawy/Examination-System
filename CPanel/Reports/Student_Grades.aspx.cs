@@ -50,4 +50,11 @@ public partial class CPanel_Reports_Student_Grades : System.Web.UI.Page
             ST_Grades_viewer.DataBind();
         }
     }
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Request.Cookies["UserInfo"] != null)
+            this.MasterPageFile = "~/CPanel/MP/" + Request.Cookies["UserInfo"]["Role"] + ".master";
+        else
+            Response.Redirect("/login.aspx?BackUrl=" + HttpContext.Current.Request.Url.AbsolutePath);
+    }
 }

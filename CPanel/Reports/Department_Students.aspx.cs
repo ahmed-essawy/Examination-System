@@ -56,4 +56,11 @@ public partial class CPanel_Reports_Department_Students : System.Web.UI.Page
             Dp_st_reportviewer.DataBind();
         }
     }
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Request.Cookies["UserInfo"] != null)
+            this.MasterPageFile = "~/CPanel/MP/" + Request.Cookies["UserInfo"]["Role"] + ".master";
+        else
+            Response.Redirect("/login.aspx?BackUrl=" + HttpContext.Current.Request.Url.AbsolutePath);
+    }
 }

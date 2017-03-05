@@ -9,7 +9,7 @@
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
-    Student Exam Answers
+    Student Answers
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <script lang="javaScript" type="text/javascript" src="crystalreportviewers13/js/crviewer/crv.js"></script>
@@ -26,7 +26,7 @@
             <tr>
                 <td style="width: 91px; height: 60px;">Student Name:</td>
                 <td style="height: 60px; width: 220px;">
-                    <asp:DropDownList ID="Students_DPList" runat="server" AutoPostBack="True" DataSourceID="Student_Object" DataTextField="ST_Name" DataValueField="ST_ID" Height="24px" Width="149px" >
+                    <asp:DropDownList ID="Students_DPList" runat="server" AutoPostBack="True" DataSourceID="Student_Object" DataTextField="ST_Name" DataValueField="ST_ID" Width="250px">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="Student_Object" runat="server" SelectMethod="SelectAllStudents" TypeName="StudentsLayer"></asp:ObjectDataSource>
                 </td>
@@ -35,7 +35,7 @@
             <tr>
                 <td style="width: 91px">Exam_ID:</td>
                 <td style="width: 220px">
-                    <asp:DropDownList ID="Exam_DPList" runat="server" AutoPostBack="True" DataSourceID="Exam_object" DataTextField="EX_ID" DataValueField="EX_ID" Height="16px" Width="147px">
+                    <asp:DropDownList ID="Exam_DPList" runat="server" AutoPostBack="True" DataSourceID="Exam_object" DataTextField="EX_ID" DataValueField="EX_ID" Width="250px">
                     </asp:DropDownList>
                     <asp:ObjectDataSource ID="Exam_object" runat="server" SelectMethod="GetExID_BY_STID" TypeName="StudentsLayer">
                         <SelectParameters>
