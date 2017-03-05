@@ -26,7 +26,17 @@
             <li><a><i class="fa fa-book">&nbsp;</i>Exams<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="/CPanel/Questions/Exams/By_Date.aspx">By Date</a></li>
-                    <li><a href="/CPanel/Questions/Exams/Assign_Exam.aspx">Assign Exam/a></li>
+                    <li><a href="/CPanel/Questions/Exams/Assign_Exam.aspx">Assign Exam</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-book">&nbsp;</i>Reports<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="/CPanel/Reports/Department_Students.aspx">Department Students</a></li>
+                    <li><a href="/CPanel/Reports/Exam_Questions.aspx">Exam Questions</a></li>
+                    <li><a href="/CPanel/Reports/Instructor_Courses.aspx">Instructor Courses</a></li>
+                    <li><a href="/CPanel/Reports/Student_Answers.aspx">Student Answers</a></li>
+                    <li><a href="/CPanel/Reports/Student_Grades.aspx">Student Grades</a></li>
+                    <li><a href="/CPanel/Reports/topics_per_course.aspx">Topics Per Course</a></li>
                 </ul>
             </li>
         </ul>
