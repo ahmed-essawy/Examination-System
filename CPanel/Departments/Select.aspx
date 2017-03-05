@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Select.aspx.cs" Inherits="CPanel_Departments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
-    Departments
+    Select Departments
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">

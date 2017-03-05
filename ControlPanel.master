@@ -32,6 +32,11 @@
             border: 1px solid;
             padding: 8px;
         }
+
+        select {
+            width: 25%;
+            height: 30px;
+        }
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>

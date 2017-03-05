@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Update_Delete.aspx.cs" Inherits="CPanel_Administrators_Select" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
-    Administrators
+    Update & Delete Administrators
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">

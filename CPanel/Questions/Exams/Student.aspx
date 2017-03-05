@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="Student.aspx.cs" Inherits="CPanel_Questions_Exams_Student" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
-    Exams
+    Exam Students
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">

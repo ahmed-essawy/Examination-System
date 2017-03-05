@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="PerCourse.aspx.cs" Inherits="CPanel_Questions_PerCourse" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
-    Questions
+    Questions Per Course
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form runat="server">
@@ -35,8 +35,7 @@
                 <asp:TemplateField HeaderText="Grade">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox2" Style="width: 30px; text-align: center;" runat="server" Text="<%# Bind('QS_Grade') %>"></asp:TextBox>
-                    
-</EditItemTemplate>
+                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label5" runat="server" Text="<%# Bind('QS_Grade') %>"></asp:Label>
                     </ItemTemplate>

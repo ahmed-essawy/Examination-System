@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CPanel/MP/anonymous.master" AutoEventWireup="true" CodeFile="WithManagers.aspx.cs" Inherits="CPanel_Departments_WithManagers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="Server">
+    Department Managers
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <form id="form1" runat="server">
